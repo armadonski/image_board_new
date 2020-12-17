@@ -1,5 +1,7 @@
 .Content {
-    margin: 72px 0 72px 0;
     border-top: 1px solid #999999;
     border-bottom: 1px solid #999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

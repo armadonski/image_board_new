@@ -1,12 +1,16 @@
 import React from 'react';
 import Logo from '../../Logo/Logo';
+import Button from '../../UI/Button/Button';
 import classes from './Toolbar.css';
 
 const toolbar = props => (
     <>
         <div className={classes.Toolbar}>
             <Logo/>
-            Toolbar
+            <div className={classes.NavBar}>
+                <Button background={true}>Login</Button>
+                <Button>Sign Up</Button>
+            </div>
         </div>
     </>
 );

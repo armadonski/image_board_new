@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Layout from '../../hoc/Layout/Layout';
+import Posts from '../Posts/Posts';
 
 class ImageBoard extends Component {
     state = {
@@ -9,7 +10,9 @@ class ImageBoard extends Component {
     render() {
         return (
             <Layout>
-                {this.state.helloWorld}
+                Stuff
+                <Posts/>
+                Stuff
             </Layout>
         );
     }

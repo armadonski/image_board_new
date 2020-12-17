@@ -1,0 +1,16 @@
+.Posts {
+    display: flex;
+    flex-direction: row;
+    overflow: no-display;
+    align-items: center;
+}
+
+.Posts > div:first-of-type {
+    height: 500px;
+    width: 80%;
+}
+
+.Posts > div:last-of-type {
+    height: 500px;
+    width: 80%;
+}

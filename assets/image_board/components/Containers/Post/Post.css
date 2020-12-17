@@ -1,0 +1,10 @@
+.Post {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: 700px;
+    background: #5eb5e0;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+}
