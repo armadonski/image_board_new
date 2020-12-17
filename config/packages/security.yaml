@@ -1,0 +1,26 @@
+security:
+    encoders:
+        App\Entity\User:
+            algorithm: bcrypt
+    providers:
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            anonymous: true
+            json_login:
+                check_path: authenticate_login
+            logout:
+                path: authenticate_logout
+                target: index
+            guard:
+                authenticators:
+                    - App\Services\Security\AuthenticatorService
+    access_control:
+        - { path: ^/upload, roles: ROLE_USER }
+        - { path: ^/vote, roles: ROLE_USER }

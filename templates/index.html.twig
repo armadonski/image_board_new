@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('Layout') }}
+        {{ encore_entry_link_tags('Toolbar') }}
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+    <div id="index"></div>
+{% endblock %}
+</body>
+{% block javascripts %}
+    <script type="text/javascript">
+        const user = '{% if username is defined %}{{ username }}{% else %}{% set username = null %}{% endif %}';
+    </script>
+    {{ encore_entry_script_tags('index') }}
+{% endblock %}
+</html>

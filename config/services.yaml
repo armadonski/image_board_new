@@ -1,0 +1,28 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+            - '../src/Tests/'
+    App\Controller\:
+        resource: '../src/Controller/'
+        tags: ['controller.service_arguments']
+    authenthication.user.param_converter:
+        class: App\Services\ParamConverter\UserParamConverter
+        tags:
+            - { name: request.param_converter, converter: user_param_converter}
+    post.upload.param_converter:
+        class: App\Services\ParamConverter\UploadFileRequestParamConverter
+        tags:
+            - {name: request.param_converter, converter: upload_param_converter}
+    post.get_all.param_converter:
+        class: App\Services\ParamConverter\PostsParamConverter
+        tags:
+            - {name: request.param_converter, converter: get_posts_param_converter}
