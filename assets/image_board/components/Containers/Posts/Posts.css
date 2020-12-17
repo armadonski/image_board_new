@@ -1,16 +1,12 @@
 .Posts {
+    overflow: hidden;
     display: flex;
     flex-direction: row;
-    overflow: no-display;
     align-items: center;
+    justify-content: center;
 }
 
-.Posts > div:first-of-type {
-    height: 500px;
-    width: 80%;
-}
-
-.Posts > div:last-of-type {
-    height: 500px;
-    width: 80%;
+.Posts > div:first-of-type, .Posts > div:last-of-type {
+    height: 60%;
+    width: 60%;
 }

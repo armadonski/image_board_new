@@ -8,7 +8,7 @@ const layout = props => (
         <main className={classes.Content}>
             {props.children}
         </main>
-        <footer>Footer</footer>
+        <footer>Copyright Gigelius 2020</footer>
     </>
 );
 

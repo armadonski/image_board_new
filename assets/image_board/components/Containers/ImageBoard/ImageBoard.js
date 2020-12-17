@@ -10,9 +10,13 @@ class ImageBoard extends Component {
     render() {
         return (
             <Layout>
-                Stuff
+                <div>
+                    Stuff
+                </div>
                 <Posts/>
-                Stuff
+                <div>
+                    Stuff
+                </div>
             </Layout>
         );
     }
