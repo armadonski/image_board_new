@@ -1,7 +1,7 @@
-import Routing from '../../../vendor/friendsofsymfony/jsrouting-bundle/Resources/public/js/router';
+import Routing from '../../vendor/friendsofsymfony/jsrouting-bundle/Resources/js/router';
 
 const routes = () => {
-    const routes = require('../../../public_html/js/fos_js_routes.json');
+    const routes = require('../../public/js/fos_js_routes.json');
     Routing.setRoutingData(routes);
 }
 

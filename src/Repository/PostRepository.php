@@ -2,10 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\Comment;
-use App\Entity\Vote;
 use Doctrine\ORM\EntityRepository;
-use Doctrine\ORM\Query\Expr\Join;
 use Ramsey\Uuid\UuidInterface;
 
 class PostRepository extends EntityRepository
@@ -17,7 +14,7 @@ class PostRepository extends EntityRepository
            p.tags as tags,
            p.caption as caption,
            p.image_name as image,
-           p.user as user,      
+           u.nickname as user,      
            COUNT(c.id) as comments,
                (
                 SELECT SUM(v.likes)
@@ -35,7 +32,8 @@ class PostRepository extends EntityRepository
         }
         $sql .= '
             FROM post p
-            LEFT JOIN comment c on p.id = c.post             
+            LEFT JOIN comment c on p.id = c.post       
+            JOIN user u on u.id = p.user      
             GROUP BY p.uuid
             ORDER BY points DESC';
 

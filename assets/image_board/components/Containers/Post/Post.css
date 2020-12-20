@@ -1,10 +1,35 @@
 .Post {
     display: flex;
     flex-direction: column;
-    min-width: 800px;
-    height: 700px;
-    background: #5eb5e0;
     margin: 10px;
     align-items: center;
-    justify-content: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.Post > img {
+    object-fit: contain;
+    width: 100%;
+}
+
+.Header {
+    background-color: #313131;
+    height: 10%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.Comments {
+    height: 10%;
+    width: 100%;
+    background: #aacd4e;
+    box-sizing: border-box;
+}
+
+.Active {
+    background: green;
+}
+
+.Inactive {
+    background: red;
 }

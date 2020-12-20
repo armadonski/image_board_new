@@ -2,8 +2,6 @@
 
 namespace App\Services;
 
-use App\Entity\Post;
-use App\Entity\Vote;
 use App\Model\PaginatedRequestModel;
 use App\Services\Fetcher\PostFetcher;
 use App\Services\Fetcher\VoteFetcher;
@@ -13,7 +11,6 @@ use Ramsey\Uuid\UuidInterface;
 class PostService
 {
     private $postFetcher;
-    private $uploaderHelper;
     private $voteFetcher;
     private $paginationHelper;
 
