@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Layout from '../../hoc/Layout/Layout';
-import Posts from '../Posts/Posts';
+import Posts from '../../Posts/Posts';
+import PostPage from '../../Posts/PostPage/PostPage';
 import Routing from '../../../../../vendor/friendsofsymfony/jsrouting-bundle/Resources/public/js/router.min';
 import Axios from "axios";
 
@@ -13,7 +14,8 @@ class ImageBoard extends Component {
         postData: [],
         activePost: 0,
         prevActivePost: 0,
-        page: 1
+        page: 1,
+        postPage: null
     }
 
     posts() {
@@ -31,9 +33,11 @@ class ImageBoard extends Component {
 
     activePostHandler = index => {
         const prevActivePost = this.state.activePost;
+        const activePostData = this.state.postData.rows[index];
         this.setState({
             activePost: index,
-            prevActivePost: prevActivePost
+            prevActivePost: prevActivePost,
+            postPage: activePostData
         });
     };
 
@@ -46,13 +50,11 @@ class ImageBoard extends Component {
 
         return (
             <Layout>
-                <div>
-                    Stuff
-                </div>
-                <Posts posts={posts} selectPost={this.activePostHandler} selectedPost={this.state.activePost}/>
-                <div>
-                    Stuff
-                </div>
+                {
+                    !this.state.postPage ?
+                        <Posts posts={posts} selectPost={this.activePostHandler}
+                               selectedPost={this.state.activePost}/> : <PostPage post={this.state.postPage}/>
+                }
             </Layout>
         );
     }

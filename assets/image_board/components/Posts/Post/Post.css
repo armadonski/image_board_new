@@ -1,10 +1,25 @@
 .Post {
     display: flex;
     flex-direction: column;
+    max-width: 500px;
     margin: 10px;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-    justify-content: space-between;
+    transition: ease 1s;
+}
+
+@media (max-width: 1000px) {
+    .Post{
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+.Post:hover {
+    background: gray;
+    opacity: 0.8;
+    transition: ease 1s;
+    cursor: pointer;
 }
 
 .Post > img {
@@ -27,9 +42,9 @@
 }
 
 .Active {
-    background: green;
+color: green;
 }
 
 .Inactive {
-    background: red;
+    color:red;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Posts.css';
-import Post from '../Post/Post';
+import Post from './Post/Post';
 
 const posts = props => {
     const posts = props.posts.rows ? props.posts.rows

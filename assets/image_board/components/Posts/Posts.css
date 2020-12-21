@@ -1,0 +1,13 @@
+.Posts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+@media (max-width: 1000px) {
+    .Posts {
+        display: block;
+        width: 100%;
+    }
+}

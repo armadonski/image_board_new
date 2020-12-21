@@ -10,8 +10,9 @@ Encore
     .addStyleEntry('Toolbar','./assets/image_board/components/Navigation/Toolbar/Toolbar.css')
     .addStyleEntry('Button','./assets/image_board/components/UI/Button/Button.css')
     .addStyleEntry('Logo','./assets/image_board/components/Logo/Logo.css')
-    .addStyleEntry('Post','./assets/image_board/components/Containers/Post/Post.css')
-    .addStyleEntry('Posts','./assets/image_board/components/Containers/Posts/Posts.css')
+    .addStyleEntry('Post','./assets/image_board/components/Posts/Post/Post.css')
+    .addStyleEntry('PostPage','./assets/image_board/components/Posts/PostPage/PostPage.css')
+    .addStyleEntry('Posts','./assets/image_board/components/Posts/Posts.css')
 
     .configureCssLoader(options => { options.modules = true })
 
