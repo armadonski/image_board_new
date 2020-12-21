@@ -1,13 +1,20 @@
 .Toolbar {
-    color: black;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background: black;
-    padding: 5px 0 5px 0;
 }
 
 .NavBar {
     box-sizing: border-box;
+}
+
+@media (max-width: 1000px) {
+    .Toolbar {
+        height: 70px;
+    }
+
+    .NavBar {
+        display: none;
+    }
 }

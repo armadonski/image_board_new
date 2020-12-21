@@ -1,19 +1,24 @@
-import React from 'react';
+import React, {Component} from 'react';
 import classes from './PostPage.css';
+import PostToolbar from '../../Navigation/Toolbar/PostToolbar/PostToolbar';
 
-const postPage = props => {
-    console.log(props.post)
-    return (
-        <div className={classes.PostPage}>
-            <div>{props.post.caption}</div>
-            <div>
-                <img className={classes.PostImage} alt={props.post.caption} src={props.post.image}/>
+class PostPage extends Component {
+    render() {
+        return (
+            <div className={classes.PostPage}>
+                <div>
+                    <img className={classes.PostImage} alt={this.props.post.caption} src={this.props.post.image}/>
+                </div>
+                <div>
+                    <PostToolbar/>
+                </div>
+                <div>
+                    Comments
+                </div>
             </div>
-            <div>
-                Comments
-            </div>
-        </div>
-    );
-};
+        );
+    }
+}
 
-export default postPage;
+
+export default PostPage;

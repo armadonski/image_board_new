@@ -12,6 +12,7 @@ Encore
     .addStyleEntry('Logo','./assets/image_board/components/Logo/Logo.css')
     .addStyleEntry('Post','./assets/image_board/components/Posts/Post/Post.css')
     .addStyleEntry('PostPage','./assets/image_board/components/Posts/PostPage/PostPage.css')
+    .addStyleEntry('PostToolbar','./assets/image_board/components/Navigation/Toolbar/PostToolbar/PostToobar.css')
     .addStyleEntry('Posts','./assets/image_board/components/Posts/Posts.css')
 
     .configureCssLoader(options => { options.modules = true })

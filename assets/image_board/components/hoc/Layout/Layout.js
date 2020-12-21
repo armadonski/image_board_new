@@ -5,10 +5,12 @@ import classes from './Layout.css';
 const layout = props => (
     <>
         <Toolbar/>
-        <main className={classes.Content}>
-            {props.children}
-        </main>
-        <footer>Copyright Gigelius 2020</footer>
+        <div className={classes.Page}>
+            <main className={classes.Content}>
+                {props.children}
+            </main>
+            <footer>Copyright Gigelius 2020</footer>
+        </div>
     </>
 );
 

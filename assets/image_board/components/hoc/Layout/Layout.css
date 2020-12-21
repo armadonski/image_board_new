@@ -1,7 +1,26 @@
+body {
+    background: #27292d;
+    color: white;
+}
+.Page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .Content {
+    width: 80%;
+    background: #313131;
     border-top: 1px solid #999999;
     border-bottom: 1px solid #999999;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 1000px) {
+    .Content{
+        width: 100%;
+    }
 }
