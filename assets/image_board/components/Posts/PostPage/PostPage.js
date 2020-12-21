@@ -7,10 +7,16 @@ class PostPage extends Component {
         return (
             <div className={classes.PostPage}>
                 <div>
+                    {this.props.post.caption}
+                   <PostToolbar clicked={this.props.navigation}/>
+                </div>
+                <div>
                     <img className={classes.PostImage} alt={this.props.post.caption} src={this.props.post.image}/>
                 </div>
                 <div>
-                    <PostToolbar/>
+                </div>
+                <div>
+                    Description
                 </div>
                 <div>
                     Comments

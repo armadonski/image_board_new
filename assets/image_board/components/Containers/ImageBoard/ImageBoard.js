@@ -15,7 +15,8 @@ class ImageBoard extends Component {
         activePost: 0,
         prevActivePost: 0,
         page: 1,
-        postPage: null
+        postPage: null,
+        pageNumber: 1
     }
 
     posts() {
@@ -41,6 +42,16 @@ class ImageBoard extends Component {
         });
     };
 
+    navigationHandler = direction => {
+        const prevPost = this.state.activePost;
+        let activePost = direction === 'next' ? prevPost + 1 : direction === 'back' ? prevPost - 1 : 0;
+        this.setState({
+            activePost: activePost,
+            postPage: this.state.postData.rows[activePost],
+            prevPost: prevPost
+        })
+    }
+
     componentDidMount() {
         this.posts();
     }
@@ -53,7 +64,8 @@ class ImageBoard extends Component {
                 {
                     !this.state.postPage ?
                         <Posts posts={posts} selectPost={this.activePostHandler}
-                               selectedPost={this.state.activePost}/> : <PostPage post={this.state.postPage}/>
+                               selectedPost={this.state.activePost}/> :
+                        <PostPage post={this.state.postPage} navigation={this.navigationHandler}/>
                 }
             </Layout>
         );
