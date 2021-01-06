@@ -1,8 +1,8 @@
 .Post {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
-    margin: 10px;
+    max-width: 400px;
+    margin: 2px;
     justify-content: center;
     align-items: center;
     transition: ease 1s;
@@ -42,7 +42,7 @@
 }
 
 .Header {
-    background-color: #313131;
+    background: #313131;
     height: 10%;
     width: 100%;
     box-sizing: border-box;

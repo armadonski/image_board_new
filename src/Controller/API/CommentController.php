@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\API;
 
 use App\Services\CommentService;
 use Ramsey\Uuid\Uuid;
@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-/** @Route("/comment"), name="comment_" */
+/** @Route("/api/comment"), name="comment_" */
 class CommentController extends AbstractController
 {
     /**

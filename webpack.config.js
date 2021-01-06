@@ -5,8 +5,11 @@ Encore
     .setPublicPath('/build')
 
     .addEntry('index', './assets/image_board/index.js')
+    .addEntry('post_page', './assets/image_board/post_page.js')
+    .addEntry('authentication', './assets/image_board/authentication.js')
 
     .addStyleEntry('Layout','./assets/image_board/components/hoc/Layout/Layout.css')
+    .addStyleEntry('Authentication','./assets/image_board/components/Containers/Authentication/Authentication.css')
     .addStyleEntry('Toolbar','./assets/image_board/components/Navigation/Toolbar/Toolbar.css')
     .addStyleEntry('Button','./assets/image_board/components/UI/Button/Button.css')
     .addStyleEntry('Logo','./assets/image_board/components/Logo/Logo.css')

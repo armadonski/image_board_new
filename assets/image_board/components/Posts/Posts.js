@@ -8,10 +8,8 @@ const posts = props => {
                 return <Post
                     key={item.uuid}
                     post={item.image}
-                    clicked={props.selectPost}
                     title={item.caption}
                     postIndex={key}
-                    selectedPost={props.selectedPost}
                 />
             }
         ) : [];

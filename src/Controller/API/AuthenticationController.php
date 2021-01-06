@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\API;
 
 use App\Exception\UserRegistrationException;
 use App\Model\UserRegistrationModel;
@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/** @Route("/authenticate", name="authenticate_") */
+/** @Route("/api/authenticate", name="authenticate_") */
 class AuthenticationController extends AbstractController
 {
     /**

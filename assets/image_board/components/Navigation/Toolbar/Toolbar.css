@@ -1,8 +1,10 @@
 .Toolbar {
+    background: #1E174C;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 0 10px 0px;
 }
 
 .NavBar {

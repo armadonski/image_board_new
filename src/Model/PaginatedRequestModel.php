@@ -2,8 +2,6 @@
 
 namespace App\Model;
 
-use Doctrine\ORM\QueryBuilder;
-
 class PaginatedRequestModel
 {
     private $queryBuilder;

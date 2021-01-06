@@ -7,8 +7,7 @@ const post = props => {
             <div
                 className={[classes.Post, props.postIndex === props.selectedPost ? classes.Active : classes.Inactive].join(' ')}>
                 <div className={classes.Header}>{props.title}</div>
-                <div className={classes.PostImage}
-                     onClick={() => props.clicked(props.postIndex)}>
+                <div className={classes.PostImage}>
                     <img alt={props.title}
                          src={props.post}/></div>
             </div>

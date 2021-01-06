@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\API;
 
 use App\Model\PaginatedRequestModel;
 use App\Model\UploadFileRequestModel;
@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-/** @Route("/post"), name="posts_" */
+/** @Route("/api/post"), name="posts_" */
 class PostsController extends AbstractController
 {
     /**

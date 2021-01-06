@@ -11,13 +11,11 @@ use Ramsey\Uuid\UuidInterface;
 class PostService
 {
     private $postFetcher;
-    private $voteFetcher;
     private $paginationHelper;
 
     public function __construct(PostFetcher $postFetcher, VoteFetcher $voteFetcher, PaginationHelper $paginationHelper)
     {
         $this->postFetcher = $postFetcher;
-        $this->voteFetcher = $voteFetcher;
         $this->paginationHelper = $paginationHelper;
     }
 

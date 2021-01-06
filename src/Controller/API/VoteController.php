@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\API;
 
 use App\Services\VoteService;
 use Ramsey\Uuid\Uuid;
@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-/** @Route("/vote", name="vote_") */
+/** @Route("/api/vote", name="vote_") */
 class VoteController extends AbstractController
 {
     /** @Route("/like", name="like", options={"expose"=true}, methods={"POST"})

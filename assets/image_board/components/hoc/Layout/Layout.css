@@ -1,7 +1,8 @@
 body {
-    background: #27292d;
+    background: #F2F2F2;
     color: white;
 }
+
 .Page {
     display: flex;
     align-items: center;
@@ -10,17 +11,15 @@ body {
 }
 
 .Content {
+    background: #2E3035;
     width: 80%;
-    background: #313131;
-    border-top: 1px solid #999999;
-    border-bottom: 1px solid #999999;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 @media (max-width: 1000px) {
-    .Content{
+    .Content {
         width: 100%;
     }
 }

@@ -1,28 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
-    {% block stylesheets %}
-        {{ encore_entry_link_tags('Layout') }}
-        {{ encore_entry_link_tags('Toolbar') }}
-        {{ encore_entry_link_tags('Button') }}
-        {{ encore_entry_link_tags('Logo') }}
-        {{ encore_entry_link_tags('Post') }}
-        {{ encore_entry_link_tags('Posts') }}
-        {{ encore_entry_link_tags('PostPage') }}
-        {{ encore_entry_link_tags('PostToolbar') }}
-    {% endblock %}
-</head>
-<body>
+{% extends 'base.html.twig' %}
+{% block title %}Index{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('Post') }}
+    {{ encore_entry_link_tags('Posts') }}
+    {{ encore_entry_link_tags('PostPage') }}
+    {{ encore_entry_link_tags('PostToolbar') }}
+{% endblock %}
 {% block body %}
     <div id="index"></div>
 {% endblock %}
-</body>
 {% block javascripts %}
-    <script type="text/javascript">
-        const user = '{% if username is defined %}{{ username }}{% else %}{% set username = null %}{% endif %}';
-    </script>
+    {{ parent() }}
     {{ encore_entry_script_tags('index') }}
 {% endblock %}
-</html>
