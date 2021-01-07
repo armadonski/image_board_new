@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useEffect} from 'react';
 import classes from './RegistrationForm.css';
 import Input from '../../UI/Input/Input';
 import Button from '../../UI/Button/Button';
@@ -16,9 +16,14 @@ class RegistrationForm extends Component {
         username: null,
         password: null,
         retypePassword: null,
-        error: null,
+        errors: [],
         success: null
     };
+
+    displayErrors = () => {
+        return this.state.errors ? this.state.errors.map((error, key) => (<div key={key}>{error}</div>)
+        ) : null;
+    }
 
     emailHandler = e => {
         this.setState({
@@ -57,9 +62,10 @@ class RegistrationForm extends Component {
         Axios.post(Routing.generate('authenticate_register'),
             data
         ).then((response) => {
-            console.log(response)
+            console.log(response);
         }).catch((error) => {
-            console.log(error.response)
+            const errors = error.response.data;
+            this.setState({errors: [...errors]})
         })
     };
 
@@ -74,7 +80,12 @@ class RegistrationForm extends Component {
             ).then((response) => {
                 console.log(response)
             }).catch((error) => {
-                console.log(error.response)
+                const errors = error.response.data;
+                const errorMessage = Object.keys(errors).map(errorKey => {
+                    return errors[errorKey];
+                });
+                console.log(errorMessage);
+                this.setState({errors: [...errorMessage]})
             })
         }
     }
@@ -90,12 +101,19 @@ class RegistrationForm extends Component {
             ).then((response) => {
                 console.log(response)
             }).catch((error) => {
-                console.log(error.response)
+                const errors = error.response.data;
+                const errorMessage = Object.keys(errors).map(errorKey => {
+                    return errors[errorKey];
+                });
+                console.log(errorMessage);
+                this.setState({errors: [...errorMessage]})
             })
         }
     }
 
     render() {
+        const errors = this.displayErrors();
+
         return (
             <>
                 <div className={classes.FormGroup}>
@@ -108,6 +126,7 @@ class RegistrationForm extends Component {
                                    placeholder="Username"/>
                             <Input type="password" onChange={this.passwordHandler} placeholder="Password"/>
                             <Input type="password" onChange={this.retypePasswordHandler} placeholder="Retype Password"/>
+                            {errors}
                         </div>
                     </Card>
                 </div>
