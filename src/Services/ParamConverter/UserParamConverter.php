@@ -11,10 +11,11 @@ class UserParamConverter implements ParamConverterInterface
 {
     public function apply(Request $request, ParamConverter $configuration)
     {
+        $requestData = json_decode($request->getContent(), true);
         $user = (new UserRegistrationModel())
-            ->setNickname($request->request->get('nickname'))
-            ->setPassword($request->request->get('password'))
-            ->setEmail($request->request->get('email'));
+            ->setNickname($requestData['nickname'])
+            ->setPassword($requestData['password'])
+            ->setEmail($requestData['email']);
         $request->attributes->set($configuration->getName(), $user);
     }
 

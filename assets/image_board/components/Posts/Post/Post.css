@@ -7,6 +7,7 @@
     align-items: center;
     transition: ease 1s;
     background: #474A51;
+    box-shadow: 0 6px 10px 0 rgba(27, 28, 30, .31);
 }
 
 @media (max-width: 1000px) {

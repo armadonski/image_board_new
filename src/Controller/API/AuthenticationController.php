@@ -54,4 +54,20 @@ class AuthenticationController extends AbstractController
     {
 
     }
+
+    /**
+     * @Route("/check_username", options={"expose"=true}, name="check_username", methods={"POST"})
+     */
+    public function checkUsernameAction()
+    {
+
+    }
+
+    /**
+     * @Route("/check_email", options={"expose"=true}, name="check_email", methods={"POST"})
+     */
+    public function checkEmailAction()
+    {
+
+    }
 }

@@ -1,0 +1,15 @@
+.FormGroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ButtonGroup {
+    margin-top: 20px;
+}
+
+.InputGroup {
+    display: flex;
+    flex-direction: column;
+}

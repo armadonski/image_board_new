@@ -1,21 +1,21 @@
-import React, {Component} from 'react';
+import React from 'react';
 import classes from './Authentication.css';
+import RegistrationFrom from '../../Form/Authentication/RegistrationForm';
 import Routing from '../../../../../vendor/friendsofsymfony/jsrouting-bundle/Resources/public/js/router.min';
-import Axios from "axios";
-import Input from '../../UI/Input/Input';
-
 const routes = require('../../../../../public/js/fos_js_routes.json');
 Routing.setRoutingData(routes);
 
-class Authentication extends Component {
-    render() {
+const authentication = props => {
+    {
         return (
-            <div>
-                <a href='/'>Back to main page</a>
-                <Input/>
-            </div>
+            <>
+                <a href={Routing.generate('index')}>Back to main page</a>
+                <div className={classes.Authentication}>
+                    <RegistrationFrom/>
+                </div>
+            </>
         );
     }
 }
 
-export default Authentication;
+export default authentication;

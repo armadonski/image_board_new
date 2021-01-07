@@ -8,7 +8,7 @@ const toolbar = props => (
         <div className={classes.Toolbar}>
             <Logo/>
             <div className={classes.NavBar}>
-                <Button background={true}>Login</Button>
+                <Button background >Login</Button>
                 <Button>Sign Up</Button>
             </div>
         </div>

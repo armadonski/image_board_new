@@ -9,7 +9,10 @@ Encore
     .addEntry('authentication', './assets/image_board/authentication.js')
 
     .addStyleEntry('Layout','./assets/image_board/components/hoc/Layout/Layout.css')
+    .addStyleEntry('Card','./assets/image_board/components/UI/Card/Card.css')
+    .addStyleEntry('Input','./assets/image_board/components/UI/Input/Input.css')
     .addStyleEntry('Authentication','./assets/image_board/components/Containers/Authentication/Authentication.css')
+    .addStyleEntry('RegistrationForm','./assets/image_board/components/Form/Authentication/RegistrationForm.css')
     .addStyleEntry('Toolbar','./assets/image_board/components/Navigation/Toolbar/Toolbar.css')
     .addStyleEntry('Button','./assets/image_board/components/UI/Button/Button.css')
     .addStyleEntry('Logo','./assets/image_board/components/Logo/Logo.css')
