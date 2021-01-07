@@ -58,16 +58,24 @@ class AuthenticationController extends AbstractController
     /**
      * @Route("/check_username", options={"expose"=true}, name="check_username", methods={"POST"})
      */
-    public function checkUsernameAction()
+    public function checkUsernameAction(Request $request, UserRegistrationService $userRegistrationService)
     {
-
+        try {
+            return $userRegistrationService->checkUsername(json_decode($request->getContent(), true)['username']);
+        } catch (UserRegistrationException $e) {
+            return new Response($e->getMessage(), Response::HTTP_BAD_REQUEST);
+        }
     }
 
     /**
      * @Route("/check_email", options={"expose"=true}, name="check_email", methods={"POST"})
      */
-    public function checkEmailAction()
+    public function checkEmailAction(Request $request, UserRegistrationService $userRegistrationService)
     {
-
+        try {
+            return $userRegistrationService->checkEmail(json_decode($request->getContent(), true)['email']);
+        } catch (UserRegistrationException $e) {
+            return new Response($e->getMessage(), Response::HTTP_BAD_REQUEST);
+        }
     }
 }

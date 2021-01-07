@@ -16,7 +16,7 @@ class RegistrationForm extends Component {
         username: null,
         password: null,
         retypePassword: null,
-        error:  null,
+        error: null,
         success: null
     };
 
@@ -63,6 +63,38 @@ class RegistrationForm extends Component {
         })
     };
 
+    checkUsernameHandler = () => {
+        const username = this.state.username;
+        if (username) {
+            const data = {
+                username: username
+            };
+            Axios.post(Routing.generate('authenticate_check_username'),
+                data
+            ).then((response) => {
+                console.log(response)
+            }).catch((error) => {
+                console.log(error.response)
+            })
+        }
+    }
+
+    checkEmailHandler = () => {
+        const email = this.state.email;
+        if (email) {
+            const data = {
+                email: email
+            };
+            Axios.post(Routing.generate('authenticate_check_email'),
+                data
+            ).then((response) => {
+                console.log(response)
+            }).catch((error) => {
+                console.log(error.response)
+            })
+        }
+    }
+
     render() {
         return (
             <>
@@ -70,8 +102,10 @@ class RegistrationForm extends Component {
                     <Logo/>
                     <Card>
                         <div className={classes.InputGroup}>
-                            <Input type="email" onChange={this.emailHandler} placeholder="E-mail address"/>
-                            <Input type="text" onChange={this.usernameHandler} placeholder="Username"/>
+                            <Input type="email" onBlur={this.checkEmailHandler} onChange={this.emailHandler}
+                                   placeholder="E-mail address"/>
+                            <Input type="text" onBlur={this.checkUsernameHandler} onChange={this.usernameHandler}
+                                   placeholder="Username"/>
                             <Input type="password" onChange={this.passwordHandler} placeholder="Password"/>
                             <Input type="password" onChange={this.retypePasswordHandler} placeholder="Retype Password"/>
                         </div>
