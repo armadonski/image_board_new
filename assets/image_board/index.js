@@ -5,8 +5,8 @@ import Layout from './components/hoc/Layout/Layout';
 
 ReactDOM.render(
     <React.StrictMode>
-        <Layout>
-            <ImageBoard user={user}/>
+        <Layout user={user}>
+            <ImageBoard />
         </Layout>
     </React.StrictMode>,
     document.getElementById('index')

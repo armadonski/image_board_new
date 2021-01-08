@@ -44,9 +44,10 @@ class AuthenticatorService extends AbstractFormLoginAuthenticator implements Pas
 
     public function getCredentials(Request $request): array
     {
+        $data = json_decode($request->getContent(), true);
         $credentials = [
-            'email' => $request->request->get('email'),
-            'password' => $request->request->get('password'),
+            'email' => $data['email'],
+            'password' => $data['password'],
         ];
         $request->getSession()->set(
             Security::LAST_USERNAME,

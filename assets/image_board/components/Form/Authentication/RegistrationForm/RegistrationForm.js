@@ -1,13 +1,14 @@
-import React, {Component, useEffect} from 'react';
+import React, {Component} from 'react';
 import classes from './RegistrationForm.css';
-import Input from '../../UI/Input/Input';
-import Button from '../../UI/Button/Button';
-import Logo from '../../Logo/Logo';
-import Card from '../../UI/Card/Card';
+import Input from '../../../UI/Input/Input';
+import Button from '../../../UI/Button/Button';
+import Logo from '../../../Logo/Logo';
+import Card from '../../../UI/Card/Card';
+import Label from '../../../UI/Label/Label';
 import Axios from "axios";
-import Routing from '../../../../../vendor/friendsofsymfony/jsrouting-bundle/Resources/public/js/router.min';
+import Routing from '../../../../../../vendor/friendsofsymfony/jsrouting-bundle/Resources/public/js/router.min';
 
-const routes = require('../../../../../public/js/fos_js_routes.json');
+const routes = require('../../../../../../public/js/fos_js_routes.json');
 Routing.setRoutingData(routes);
 
 class RegistrationForm extends Component {
@@ -16,12 +17,26 @@ class RegistrationForm extends Component {
         username: null,
         password: null,
         retypePassword: null,
-        errors: [],
-        success: null
+        errors: []
+    };
+
+    loginPageHandler = () => {
+        window.location.href = '/authentication#/login'
+    }
+
+    mapObjectsToArray = object => {
+        return Object.keys(object).map(objectKey => {
+            return object[objectKey];
+        })
     };
 
     displayErrors = () => {
-        return this.state.errors ? this.state.errors.map((error, key) => (<div key={key}>{error}</div>)
+        return this.state.errors ? this.state.errors.map((error, key) =>
+            (
+                <Label class={'Label_error'} key={key}>
+                    {error}
+                </Label>
+            )
         ) : null;
     }
 
@@ -62,10 +77,13 @@ class RegistrationForm extends Component {
         Axios.post(Routing.generate('authenticate_register'),
             data
         ).then((response) => {
+            window.location.href = Routing.generate('index');
             console.log(response);
         }).catch((error) => {
             const errors = error.response.data;
-            this.setState({errors: [...errors]})
+            this.setState(typeof errors !== 'object' ? {errors: [...errors]} : {
+                errors: [...this.mapObjectsToArray(errors)]
+            })
         })
     };
 
@@ -81,9 +99,7 @@ class RegistrationForm extends Component {
                 console.log(response)
             }).catch((error) => {
                 const errors = error.response.data;
-                const errorMessage = Object.keys(errors).map(errorKey => {
-                    return errors[errorKey];
-                });
+                const errorMessage = this.mapObjectsToArray(errors);
                 console.log(errorMessage);
                 this.setState({errors: [...errorMessage]})
             })
@@ -102,9 +118,7 @@ class RegistrationForm extends Component {
                 console.log(response)
             }).catch((error) => {
                 const errors = error.response.data;
-                const errorMessage = Object.keys(errors).map(errorKey => {
-                    return errors[errorKey];
-                });
+                const errorMessage = this.mapObjectsToArray(errors);
                 console.log(errorMessage);
                 this.setState({errors: [...errorMessage]})
             })
@@ -126,13 +140,13 @@ class RegistrationForm extends Component {
                                    placeholder="Username"/>
                             <Input type="password" onChange={this.passwordHandler} placeholder="Password"/>
                             <Input type="password" onChange={this.retypePasswordHandler} placeholder="Retype Password"/>
-                            {errors}
                         </div>
+                        <div className={classes.Errors}>{errors}</div>
                     </Card>
                 </div>
                 <div className={classes.ButtonGroup}>
-                    <Button background='NoBackground'>Sign In</Button>
-                    <Button clicked={this.registrationHandler}>Register</Button>
+                    <Button background='NoBackground' clicked={this.loginPageHandler}>Sign In</Button>
+                    <Button clicked={this.registrationHandler}>Sign Up</Button>
                 </div>
             </>
         );

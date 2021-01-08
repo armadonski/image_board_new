@@ -1,0 +1,13 @@
+.Label_error {
+    background: #AA3333;
+    border-radius: 3px;
+    margin: 4px;
+    padding: 5px;
+}
+
+.Label_no_background {
+    background: green;
+    border-radius: 3px;
+    margin: 4px;
+    padding: 5px;
+}

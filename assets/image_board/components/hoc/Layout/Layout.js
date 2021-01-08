@@ -4,7 +4,7 @@ import classes from './Layout.css';
 
 const layout = props => (
     <>
-        <Toolbar/>
+        <Toolbar user={props.user}/>
         <div className={classes.Page}>
             <main className={classes.Content}>
                 {props.children}
