@@ -7,17 +7,3 @@
     padding: 10px 0 10px 0;
     box-shadow: 0 6px 10px 0 rgba(27, 28, 30, .31);
 }
-
-.NavBar {
-    box-sizing: border-box;
-}
-
-@media (max-width: 1000px) {
-    .Toolbar {
-        height: 70px;
-    }
-
-    .NavBar {
-        display: none;
-    }
-}

@@ -17,10 +17,9 @@ const posts = props => {
 
     return (
         <Masonry
-            className={classes.Masonry} // default ''
-            elementType={'ul'} // default 'div'
-            disableImagesLoaded={false} // default false
-            updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+            className={classes.Masonry}
+            disableImagesLoaded={false}
+            updateOnEachImageLoad={false}
         >
             {posts}
         </Masonry>

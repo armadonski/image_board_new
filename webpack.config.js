@@ -16,6 +16,7 @@ Encore
     .addStyleEntry('RegistrationForm','./assets/image_board/components/Form/Authentication/RegistrationForm/RegistrationForm.css')
     .addStyleEntry('LoginForm','./assets/image_board/components/Form/Authentication/LoginForm/LoginForm.css')
     .addStyleEntry('Toolbar','./assets/image_board/components/Navigation/Toolbar/Toolbar.css')
+    .addStyleEntry('NavButtons','./assets/image_board/components/Navigation/Toolbar/NavButtons/NavButtons.css')
     .addStyleEntry('Button','./assets/image_board/components/UI/Button/Button.css')
     .addStyleEntry('Logo','./assets/image_board/components/Logo/Logo.css')
     .addStyleEntry('Post','./assets/image_board/components/Posts/Post/Post.css')
