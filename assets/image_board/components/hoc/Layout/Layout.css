@@ -4,12 +4,12 @@ body {
 }
 
 .Content {
-    margin: 0 100px 0 100px;
+    /*margin: 0 100px 0 100px;*/
 }
 
-@media (max-width: 1000px) {
-    .Content {
-        width: 100%;
-        margin: 0;
-    }
-}
+/*@media (max-width: 1000px) {*/
+/*    .Content {*/
+/*        width: 100%;*/
+/*        margin: 0;*/
+/*    }*/
+/*}*/

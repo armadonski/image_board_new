@@ -1,12 +1,10 @@
-.Posts {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.Masonry {
+    margin: 0 100px 0 100px;
+    padding: 0;
 }
 
 @media (max-width: 1000px) {
-    .Posts {
-        display: block;
-        width: 100%;
+    .Masonry {
+        margin: 0;
     }
 }

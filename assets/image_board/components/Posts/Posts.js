@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './Posts.css';
 import Post from './Post/Post';
+import Masonry from 'react-masonry-component';
 
 const posts = props => {
     const posts = props.posts.rows ? props.posts.rows
@@ -15,11 +16,14 @@ const posts = props => {
         ) : [];
 
     return (
-        <div className={classes.Posts}>
-            {
-                posts
-            }
-        </div>
+        <Masonry
+            className={classes.Masonry} // default ''
+            elementType={'ul'} // default 'div'
+            disableImagesLoaded={false} // default false
+            updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+        >
+            {posts}
+        </Masonry>
     );
 }
 
