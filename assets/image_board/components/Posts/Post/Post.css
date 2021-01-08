@@ -1,13 +1,8 @@
 .Post {
-    display: flex;
-    flex-direction: column;
     max-width: 400px;
     margin: 2px;
-    justify-content: center;
-    align-items: center;
     transition: ease 1s;
-    background: #474A51;
-    box-shadow: 0 6px 10px 0 rgba(27, 28, 30, .31);
+    border-radius: 3px;
 }
 
 @media (max-width: 1000px) {
@@ -18,10 +13,15 @@
 }
 
 .PostImage {
-    display: flex;
-    flex-direction: column;
+    /*display: flex;*/
+    /*flex-direction: column;*/
     transition: ease 1s;
-    background: #474A51;
+    /*background: #474A51;*/
+}
+
+.PostImage > img {
+    object-fit: contain;
+    width: 100%;
 }
 
 @media (max-width: 1000px) {
@@ -31,22 +31,27 @@
     }
 }
 
-.Post:hover {
+.PostWidgetToolbar {
+    transition: ease 1s;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.PostWidgetToolbar:hover {
     background: gray;
     opacity: 0.8;
     transition: ease 1s;
-    cursor: pointer;
-}
-.PostImage > img{
-    object-fit: contain;
-    width: 100%;
 }
 
-.Header {
+.Title {
     background: #313131;
     height: 10%;
     width: 100%;
     box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
 }
 
 .Comments {
@@ -54,12 +59,4 @@
     width: 100%;
     background: #aacd4e;
     box-sizing: border-box;
-}
-
-.Active {
-    color: green;
-}
-
-.Inactive {
-    color: red;
 }

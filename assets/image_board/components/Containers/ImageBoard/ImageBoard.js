@@ -48,9 +48,7 @@ class ImageBoard extends Component {
 
         return (
             <>
-                {
-                    <Posts posts={posts}/>
-                }
+                <Posts posts={posts}/>
             </>
         );
     }

@@ -1,16 +1,24 @@
 import React from 'react';
+import Card from '../../UI/Card/Card';
+import Label from '../../UI/Label/Label';
 import classes from './Post.css';
 
 const post = props => {
     return (
-        <div>
-            <div
-                className={[classes.Post, props.postIndex === props.selectedPost ? classes.Active : classes.Inactive].join(' ')}>
-                <div className={classes.Header}>{props.title}</div>
+        <div className={classes.Post}>
+            <Card>
                 <div className={classes.PostImage}>
                     <img alt={props.title}
                          src={props.post}/></div>
-            </div>
+                <div className={classes.Title}>
+                    {props.title}
+                </div>
+                <div className={classes.PostWidgetToolbar}>
+                    <Label class='Label_grey'>Votes</Label>
+                    <Label class='Label_grey'>Comments</Label>
+                    <Label class='Label_grey'>Views</Label>
+                </div>
+            </Card>
         </div>
     );
 }

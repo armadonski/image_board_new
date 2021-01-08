@@ -3,22 +3,13 @@ body {
     color: white;
 }
 
-.Page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
 .Content {
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0 100px 0 100px;
 }
 
 @media (max-width: 1000px) {
     .Content {
         width: 100%;
+        margin: 0;
     }
 }

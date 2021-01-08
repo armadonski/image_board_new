@@ -5,8 +5,15 @@
     padding: 5px;
 }
 
-.Label_no_background {
+.Label_green {
     background: green;
+    border-radius: 3px;
+    margin: 4px;
+    padding: 5px;
+}
+
+.Label_grey {
+    background: #474A51;
     border-radius: 3px;
     margin: 4px;
     padding: 5px;

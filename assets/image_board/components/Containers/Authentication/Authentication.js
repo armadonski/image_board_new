@@ -13,7 +13,7 @@ const authentication = props => {
     {
         return (
             <>
-                <Label class={'Label_no_background'}><a className={classes.Link} href={Routing.generate('index')}>Back
+                <Label class={'Label_grey'}><a className={classes.Link} href={Routing.generate('index')}>Back
                     to main page</a></Label>
                 <div className={classes.Authentication}>
                     <Route
