@@ -19,13 +19,17 @@ const navButtons = props => {
         window.location.href = (Routing.generate('authenticate_logout'))
     }
 
+    const profileHandler = () => {
+        window.location.href = (Routing.generate('profile'))
+    }
+
     const navButton = !props.user ?
         <div className={classes.NavBar}>
             <Button background clicked={loginPageHandler}>Login</Button>
             <Button clicked={signUpPageHandler}>Sign Up</Button>
         </div> :
         <div className={classes.NavBar}>
-            <Button>Profile</Button>
+            <Button clicked={profileHandler}>Profile</Button>
             <Button>Upload</Button>
             <Button clicked={logoutHandler}>Logout</Button>
         </div>;
