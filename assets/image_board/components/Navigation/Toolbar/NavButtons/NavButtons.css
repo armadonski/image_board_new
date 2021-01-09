@@ -1,6 +1,6 @@
 .NavBar {
     box-sizing: border-box;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 @media (max-width: 1000px) {

@@ -1,20 +1,16 @@
 import React from 'react';
 import classes from './Authentication.css';
 import Label from '../../UI/Label/Label';
-import Routing from '../../../../../vendor/friendsofsymfony/jsrouting-bundle/Resources/public/js/router.min';
 import {Route} from "react-router-dom";
 import RegistrationForm from "../../Form/Authentication/RegistrationForm/RegistrationForm";
 import LoginForm from "../../Form/Authentication/LoginForm/LoginForm";
-
-const routes = require('../../../../../public/js/fos_js_routes.json');
-Routing.setRoutingData(routes);
+import BackToIndex from '../../Navigation/BackToIndex';
 
 const authentication = props => {
     {
         return (
             <>
-                <Label class={'Label_grey'}><a className={classes.Link} href={Routing.generate('index')}>Back
-                    to main page</a></Label>
+                <BackToIndex/>
                 <div className={classes.Authentication}>
                     <Route
                         path="/"
