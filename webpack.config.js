@@ -10,7 +10,9 @@ Encore
     .addEntry('profile_page', './assets/image_board/profile_page.js')
 
     .addStyleEntry('Layout','./assets/image_board/components/hoc/Layout/Layout.css')
+    .addStyleEntry('Backdrop','./assets/image_board/components/hoc/Backdrop/Backdrop.css')
     .addStyleEntry('Card','./assets/image_board/components/UI/Card/Card.css')
+    .addStyleEntry('Modal','./assets/image_board/components/UI/Modal/Modal.css')
     .addStyleEntry('Avatar','./assets/image_board/components/UI/Avatar/Avatar.css')
     .addStyleEntry('Label','./assets/image_board/components/UI/Label/Label.css')
     .addStyleEntry('Input','./assets/image_board/components/UI/Input/Input.css')
@@ -22,6 +24,7 @@ Encore
     .addStyleEntry('Button','./assets/image_board/components/UI/Button/Button.css')
     .addStyleEntry('Logo','./assets/image_board/components/Logo/Logo.css')
     .addStyleEntry('Post','./assets/image_board/components/Posts/Post/Post.css')
+    .addStyleEntry('Upload','./assets/image_board/components/Posts/Upload/Upload.css')
     .addStyleEntry('PostPage','./assets/image_board/components/Posts/PostPage/PostPage.css')
     .addStyleEntry('PostToolbar','./assets/image_board/components/Navigation/Toolbar/PostToolbar/PostToolbar.css')
     .addStyleEntry('Posts','./assets/image_board/components/Posts/Posts.css')

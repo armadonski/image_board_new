@@ -1,44 +1,64 @@
-import React from 'react';
+import React, {Component} from 'react';
 import classes from "./NavButtons.css";
 import Button from "../../../UI/Button/Button";
+import Upload from '.././../../Posts/Upload/Upload';
 import Routing from '../../../../../../vendor/friendsofsymfony/jsrouting-bundle/Resources/public/js/router.min';
 
 const routes = require('../../../../../../public/js/fos_js_routes.json');
 Routing.setRoutingData(routes);
 
-const navButtons = props => {
-    const loginPageHandler = () => {
+class NavButtons extends Component {
+    state = {
+        upload: false
+    };
+
+    loginPageHandler = () => {
         window.location.href = '/authentication#/login';
     }
 
-    const signUpPageHandler = () => {
+    signUpPageHandler = () => {
         window.location.href = '/authentication#/';
     }
 
-    const logoutHandler = () => {
+    logoutHandler = () => {
         window.location.href = (Routing.generate('authenticate_logout'))
     }
 
-    const profileHandler = () => {
+    profileHandler = () => {
         window.location.href = (Routing.generate('profile'))
     }
 
-    const navButton = !props.user ?
+    uploadHandler = () => {
+        this.setState({
+            upload: true
+        })
+    }
+
+    uploadModalCloseHandler = () => {
+        this.setState({
+            upload: false
+        })
+    }
+
+    navButton = !this.props.user ?
         <div className={classes.NavBar}>
-            <Button background clicked={loginPageHandler}>Login</Button>
-            <Button clicked={signUpPageHandler}>Sign Up</Button>
+            <Button background clicked={this.loginPageHandler}>Login</Button>
+            <Button clicked={this.signUpPageHandler}>Sign Up</Button>
         </div> :
         <div className={classes.NavBar}>
-            <Button clicked={profileHandler}>Profile</Button>
-            <Button>Upload</Button>
-            <Button clicked={logoutHandler}>Logout</Button>
+            <Button clicked={this.profileHandler}>Profile</Button>
+            <Button clicked={this.uploadHandler}>Upload</Button>
+            <Button clicked={this.logoutHandler}>Logout</Button>
         </div>;
 
-    return (
-        <>
-            {navButton}
-        </>
-    );
+    render() {
+        return (
+            <>
+                <Upload show={this.state.upload} close={this.uploadModalCloseHandler}/>
+                {this.navButton}
+            </>
+        );
+    }
 }
 
-export default navButtons;
+export default NavButtons;
