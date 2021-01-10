@@ -18,7 +18,6 @@ class UploadFileRequestParamConverter implements ParamConverterInterface
             ->setFile($file)
             ->setCaption($caption)
             ->setTags($tags);
-        /* @todo add validation */
         $request->attributes->set($configuration->getName(), $postRequest);
     }
 

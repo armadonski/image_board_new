@@ -7,6 +7,7 @@ use Ramsey\Uuid\UuidInterface;
 use Vich\UploaderBundle\Entity\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Ramsey\Uuid\Doctrine\UuidGenerator;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PostRepository")
@@ -38,15 +39,28 @@ class Post
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\Length(
+     *   min = 2,
+     *   allowEmptyString = false
+     * )
      */
     private $caption;
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\Length(
+     *   min = 2,
+     *   max="10",
+     *   allowEmptyString = false
+     * )
      */
     private $tags;
 
     /**
+     * @Assert\File(
+     *     maxSize="1024M",
+     *     mimeTypes={"image/jpeg", "image/gif"}
+     * )
      * @Vich\UploadableField(mapping="posts", fileNameProperty="imageName", size="imageSize")
      *
      * @var File|null
@@ -108,7 +122,7 @@ class Post
         return $this->caption;
     }
 
-    public function setCaption(string $caption): self
+    public function setCaption(?string $caption): self
     {
         $this->caption = $caption;
 

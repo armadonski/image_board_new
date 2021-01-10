@@ -2,15 +2,18 @@
 
 namespace App\Controller\API;
 
+use App\Exception\InvalidUploadFileException;
 use App\Model\PaginatedRequestModel;
 use App\Model\UploadFileRequestModel;
 use App\Services\PostService;
 use App\Services\UploadService;
+use App\Services\Validator\UploadFileValidator;
 use Ramsey\Uuid\Uuid;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
 
 /** @Route("/api/post"), name="posts_" */
 class PostsController extends AbstractController
@@ -65,8 +68,14 @@ class PostsController extends AbstractController
      *      methods={"POST"}
      *     )
      */
-    public function uploadAction(UploadFileRequestModel $post, UploadService $upload)
+    public function uploadAction(UploadFileRequestModel $post, UploadService $upload, UploadFileValidator $validator)
     {
-        return $upload->upload($post, $this->getUser()->getId());
+        try {
+            $validator->validate($post);
+
+            return $upload->upload($post, $this->getUser()->getId());
+        } catch (InvalidUploadFileException $e) {
+            return new Response($e->getMessage(), Response::HTTP_BAD_REQUEST);
+        }
     }
 }

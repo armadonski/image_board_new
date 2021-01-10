@@ -14,4 +14,10 @@
     height: 320px;
     border: #999999 solid 1px;
     margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.ImagePreview{
+    height: 320px;
+    max-width: 100%;
 }
