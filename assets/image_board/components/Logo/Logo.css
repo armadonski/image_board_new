@@ -3,3 +3,7 @@
     margin-left: 20px;
     cursor: pointer;
 }
+
+.Logo > img {
+    width: 100px;
+}

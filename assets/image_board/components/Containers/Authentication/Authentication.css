@@ -10,16 +10,3 @@ body {
     align-items: center;
     justify-content: center;
 }
-
-.Link {
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.Link:hover {
-    color: #dfdfdf;
-    cursor: pointer;
-    text-decoration: none;
-    transition: ease 1s;
-}

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Avatar from '../../UI/Avatar/Avatar';
 import classes from './ProfilePage.css';
-import BackToIndex from '../../Navigation/BackToIndex';
+import BackToIndex from '../../Navigation/BackToIndex/BackToIndex';
 
 class ProfilePage extends Component {
     state = {}

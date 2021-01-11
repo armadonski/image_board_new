@@ -131,7 +131,6 @@ class RegistrationForm extends Component {
         return (
             <>
                 <div className={classes.FormGroup}>
-                    <Logo/>
                     <Card>
                         <div className={classes.InputGroup}>
                             <Input type="email" onBlur={this.checkEmailHandler} onChange={this.emailHandler}

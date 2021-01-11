@@ -97,12 +97,9 @@ class Upload extends Component {
                     'Content-Type': 'multipart/form-data'
                 }
             }).then(response => {
-            console.log(response);
+            window.location.href= Routing.generate('get_post_page', {uuid: response.data.uuid});
         }).catch((error) => {
-            console.log(file);
-
             const errors = error.response.data;
-            console.log(errors);
             if (typeof errors === 'object') {
                 this.setState(typeof errors !== 'object' ? {errors: [...errors]} : {
                     errors: [...this.mapObjectsToArray(errors)]

@@ -3,7 +3,8 @@ import classes from './Authentication.css';
 import {Route} from "react-router-dom";
 import RegistrationForm from "../../Form/Authentication/RegistrationForm/RegistrationForm";
 import LoginForm from "../../Form/Authentication/LoginForm/LoginForm";
-import BackToIndex from '../../Navigation/BackToIndex';
+import BackToIndex from '../../Navigation/BackToIndex/BackToIndex';
+import Logo from "../../Logo/Logo";
 
 const authentication = props => {
     {
@@ -11,6 +12,7 @@ const authentication = props => {
             <>
                 <BackToIndex/>
                 <div className={classes.Authentication}>
+                    <Logo/>
                     <Route
                         path="/"
                         exact

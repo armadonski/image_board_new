@@ -69,7 +69,6 @@ class LoginForm extends Component {
         return (
             <>
                 <div className={classes.FormGroup}>
-                    <Logo/>
                     <Card>
                         <div className={classes.InputGroup}>
                             <Input type='text' onChange={this.emailHandler} placeholder='Enter your email address'/>

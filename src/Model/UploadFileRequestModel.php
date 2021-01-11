@@ -32,7 +32,7 @@ class UploadFileRequestModel implements ModelInterface
     /**
      * @Assert\NotBlank(message="Select a file in order to create post")
      * @Assert\File(
-     *     mimeTypes = {"image/jpeg", "image/gif"},
+     *     mimeTypes = {"image/jpeg", "image/gif", "image/png"},
      *     mimeTypesMessage = "Wrong file type (jpg,gif,png)"
      * )
      */
