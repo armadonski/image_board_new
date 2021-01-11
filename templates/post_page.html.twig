@@ -2,11 +2,16 @@
 {% block title %}Index{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
+    {{ encore_entry_link_tags('PostPageContainer') }}
+    {{ encore_entry_link_tags('PostPage') }}
 {% endblock %}
 {% block body %}
-    <div id="index">dsadsadsa</div>
+    <div id="index"></div>
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
+    <script type="text/javascript">
+        const post = '{% if post is defined %}{{ post }}{% else %}{% set post = null %}{% endif %}';
+    </script>
     {{ encore_entry_script_tags('post_page') }}
 {% endblock %}

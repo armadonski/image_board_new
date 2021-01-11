@@ -2,14 +2,19 @@ import React from 'react';
 import Card from '../../UI/Card/Card';
 import Label from '../../UI/Label/Label';
 import classes from './Post.css';
+import Routing from '../../../../../vendor/friendsofsymfony/jsrouting-bundle/Resources/public/js/router.min';
+
+const routes = require('../../../../../public/js/fos_js_routes.json');
+Routing.setRoutingData(routes);
 
 const post = props => {
     return (
         <div className={classes.Post}>
             <Card>
-                <div className={classes.PostImage}>
+                <a className={classes.PostImage} href={Routing.generate('get_post_page', {uuid: props.uuid})}>
                     <img alt={props.title}
-                         src={props.post}/></div>
+                         src={props.post}/>
+                </a>
                 <div className={classes.Title}>
                     {props.title}
                 </div>

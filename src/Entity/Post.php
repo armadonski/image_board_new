@@ -57,10 +57,6 @@ class Post
     private $tags;
 
     /**
-     * @Assert\File(
-     *     maxSize="1024M",
-     *     mimeTypes={"image/jpeg", "image/gif"}
-     * )
      * @Vich\UploadableField(mapping="posts", fileNameProperty="imageName", size="imageSize")
      *
      * @var File|null

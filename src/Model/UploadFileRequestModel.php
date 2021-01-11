@@ -20,10 +20,10 @@ class UploadFileRequestModel implements ModelInterface
     /**
      * @Assert\Length(
      *   min = 2,
-     *   max="10",
+     *   max="100",
      *   allowEmptyString = false,
      *   minMessage="The tags field should have at least one tag, 2 characters",
-     *   maxMessage="A maximum of 10 letters is allowed for tags"
+     *   maxMessage="A maximum of 100 letters is allowed for tags"
      * )
      * @Assert\NotBlank(message="Add tags to your post")
      */
@@ -31,6 +31,10 @@ class UploadFileRequestModel implements ModelInterface
 
     /**
      * @Assert\NotBlank(message="Select a file in order to create post")
+     * @Assert\File(
+     *     mimeTypes = {"image/jpeg", "image/gif"},
+     *     mimeTypesMessage = "Wrong file type (jpg,gif,png)"
+     * )
      */
     private $file;
 

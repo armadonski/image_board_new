@@ -103,9 +103,15 @@ class Upload extends Component {
 
             const errors = error.response.data;
             console.log(errors);
-            this.setState(typeof errors !== 'object' ? {errors: [...errors]} : {
-                errors: [...this.mapObjectsToArray(errors)]
-            })
+            if (typeof errors === 'object') {
+                this.setState(typeof errors !== 'object' ? {errors: [...errors]} : {
+                    errors: [...this.mapObjectsToArray(errors)]
+                })
+            } else {
+                this.setState({
+                    errors: ["There was an issue with upload"]
+                })
+            }
         });
     }
 

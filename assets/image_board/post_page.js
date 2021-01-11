@@ -1,12 +1,15 @@
 import React from 'react';
-import ImageBoard from "./components/Containers/ImageBoard/ImageBoard";
 import ReactDOM from 'react-dom';
 import Layout from './components/hoc/Layout/Layout';
+import PostPageContainer from './components/Containers/ImageBoard/PostPage/PostPageContainer'
+import PostPage from "./components/Posts/PostPage/PostPage";
 
 ReactDOM.render(
     <React.StrictMode>
-        <Layout>
-            dasdsadsa
+        <Layout user={user}>
+            <PostPageContainer>
+                <PostPage post={post}/>
+            </PostPageContainer>
         </Layout>
     </React.StrictMode>,
     document.getElementById('index')

@@ -8,6 +8,7 @@ const posts = props => {
         .map((item, key) => {
                 return <Post
                     key={item.uuid}
+                    uuid={item.uuid}
                     post={item.image}
                     title={item.caption}
                     postIndex={key}

@@ -29,6 +29,7 @@ Encore
     .addStyleEntry('PostToolbar','./assets/image_board/components/Navigation/Toolbar/PostToolbar/PostToolbar.css')
     .addStyleEntry('Posts','./assets/image_board/components/Posts/Posts.css')
     .addStyleEntry('ProfilePage','./assets/image_board/components/Containers/ProfilePage/ProfilePage.css')
+    .addStyleEntry('PostPageContainer','./assets/image_board/components/Containers/ImageBoard/PostPage/PostPageContainer.css')
 
     .configureCssLoader(options => { options.modules = true })
 
