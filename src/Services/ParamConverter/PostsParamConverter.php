@@ -11,7 +11,6 @@ class PostsParamConverter implements ParamConverterInterface
 {
     public function apply(Request $request, ParamConverter $configuration)
     {
-
         $requestModel = (new PaginatedRequestModel())
             ->setCurrentPage($request->query->get('page'))
             ->setSortOrder($request->query->get('ordby'))

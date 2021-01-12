@@ -1,30 +1,94 @@
-import React from 'react';
+import React, {Component} from 'react';
 import classes from './Posts.css';
 import Post from './Post/Post';
 import Masonry from 'react-masonry-component';
+import Axios from "axios";
+import Routing from '../../../../vendor/friendsofsymfony/jsrouting-bundle/Resources/public/js/router.min';
+import TrackVisibility from "../hoc/TrackVisibility/TrackVisibility";
 
-const posts = props => {
-    const posts = props.posts.rows ? props.posts.rows
-        .map((item, key) => {
-                return <Post
-                    key={item.uuid}
-                    uuid={item.uuid}
-                    post={item.image}
-                    title={item.caption}
-                    postIndex={key}
-                />
+const routes = require('../../../../public/js/fos_js_routes.json');
+Routing.setRoutingData(routes);
+
+class Posts extends Component {
+    state = {
+        postData: [],
+        postElements: [],
+        currentPage: 1,
+        rowsReturned: false
+    }
+
+    posts(page) {
+        Axios.get(Routing.generate('get_all_posts',
+            {
+                page: page
             }
-        ) : [];
+        ))
+            .catch(error => {
+                console.log(error)
+            })
+            .then(response => {
+                    const responseData = response.data.rows;
+                    let prevData = this.state.postData;
+                    let prevElements = this.state.postElements;
+                    const rowsReturned = !!responseData.length;
 
-    return (
-        <Masonry
-            className={classes.Masonry}
-            disableImagesLoaded={false}
-            updateOnEachImageLoad={false}
-        >
-            {posts}
-        </Masonry>
-    );
+                    const elements = responseData.map(item => {
+                        return <TrackVisibility
+                            uuid={item.uuid}
+                            visible={this.visibilityHandler}
+                            key={item.uuid}>
+                            <Post
+                                post={item}
+                            />
+                        </TrackVisibility>;
+                    });
+
+                    this.setState({
+                        postData: [...prevData, responseData],
+                        postElements: [...prevElements, elements],
+                        rowsReturned: rowsReturned
+                    });
+                }
+            )
+    }
+
+    componentDidMount() {
+        if (this.state.currentPage === 1) {
+            this.posts(this.state.currentPage);
+        }
+    }
+
+    componentDidUpdate(preProps, prevState, snapshot) {
+        if (prevState.currentPage !== this.state.currentPage && this.state.rowsReturned) {
+            this.posts(this.state.currentPage);
+        }
+    }
+
+    visibilityHandler = (uuid) => {
+        const postData = this.state.postData;
+        postData.map(item=>{
+            if (item.length && uuid === item[item.length - 1].uuid) {
+                const prevPage = this.state.currentPage;
+                this.setState({
+                    currentPage: prevPage + 1
+                })
+            }
+        })
+    }
+
+    render() {
+
+        return (
+            <Masonry
+                ref={this.rootRef}
+                className={classes.Masonry}
+                disableImagesLoaded={false}
+                updateOnEachImageLoad={false}
+            >
+                {this.state.postElements}
+            </Masonry>
+        );
+    }
 }
 
-export default posts;
+export default Posts;

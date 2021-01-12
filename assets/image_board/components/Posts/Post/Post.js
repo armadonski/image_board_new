@@ -11,12 +11,12 @@ const post = props => {
     return (
         <div className={classes.Post}>
             <Card>
-                <a className={classes.PostImage} href={Routing.generate('get_post_page', {uuid: props.uuid})}>
-                    <img alt={props.title}
-                         src={props.post}/>
+                <a className={classes.PostImage} href={Routing.generate('get_post_page', {uuid: props.post.uuid})}>
+                    <img alt={props.post.caption}
+                         src={props.post.image}/>
                 </a>
                 <div className={classes.Title}>
-                    {props.title}
+                    {props.post.caption}
                 </div>
                 <div className={classes.PostWidgetToolbar}>
                     <Label class='Label_grey'>Votes</Label>
