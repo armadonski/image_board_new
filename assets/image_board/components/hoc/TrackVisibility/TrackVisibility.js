@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import classes from '../../Posts/Post/Post.css';
 
 class TrackVisibility extends Component {
     ref = React.createRef();
@@ -28,7 +29,7 @@ class TrackVisibility extends Component {
 
     render() {
         return (
-            <div ref={this.ref}>{this.props.children}</div>
+            <div className={classes.Post} ref={this.ref}>{this.props.children}</div>
         );
     }
 }
