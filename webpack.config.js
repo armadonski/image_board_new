@@ -28,6 +28,7 @@ Encore
     .addStyleEntry('Upload','./assets/image_board/components/Posts/Upload/Upload.css')
     .addStyleEntry('PostPage','./assets/image_board/components/Posts/PostPage/PostPage.css')
     .addStyleEntry('PostToolbar','./assets/image_board/components/Navigation/Toolbar/PostToolbar/PostToolbar.css')
+    .addStyleEntry('PostWidgetToolbar','./assets/image_board/components/Navigation/PostWidgetToolbar/PostWidgetToolbar.css')
     .addStyleEntry('Posts','./assets/image_board/components/Posts/Posts.css')
     .addStyleEntry('ProfilePage','./assets/image_board/components/Containers/ProfilePage/ProfilePage.css')
     .addStyleEntry('PostPageContainer','./assets/image_board/components/Containers/ImageBoard/PostPage/PostPageContainer.css')

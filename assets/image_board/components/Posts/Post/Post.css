@@ -31,21 +31,6 @@
     }
 }
 
-.PostWidgetToolbar {
-    transition: ease 1s;
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    border-radius: 3px;
-}
-
-.PostWidgetToolbar:hover {
-    background: #999999;
-    opacity: 0.8;
-    transition: ease 1s;
-}
-
 .Title {
     background: #313131;
     height: 10%;

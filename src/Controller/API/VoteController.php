@@ -21,7 +21,9 @@ class VoteController extends AbstractController
             $userId = $this->getUser()->getId();
         }
 
-        return $vote->like(Uuid::fromString($request->get('uuid')), $userId);
+        $uuid = json_decode($request->getContent(), true)['uuid'];
+
+        return $vote->like(Uuid::fromString($uuid), $userId);
     }
 
     /**
@@ -33,8 +35,9 @@ class VoteController extends AbstractController
         if ($this->getUser()) {
             $userId = $this->getUser()->getId();
         }
+        $uuid = json_decode($request->getContent(), true)['uuid'];
 
-        return $vote->dislike(Uuid::fromString($request->get('uuid')), $userId);
+        return $vote->dislike(Uuid::fromString($uuid), $userId);
     }
 
     /** @Route("/unlike", name="unlike", options={"expose"=true}, methods={"POST"}) */
@@ -44,7 +47,8 @@ class VoteController extends AbstractController
         if ($this->getUser()) {
             $userId = $this->getUser()->getId();
         }
+        $uuid = json_decode($request->getContent(), true)['uuid'];
 
-        return $vote->unlike(Uuid::fromString($request->get('uuid')), $userId);
+        return $vote->unlike(Uuid::fromString($uuid), $userId);
     }
 }

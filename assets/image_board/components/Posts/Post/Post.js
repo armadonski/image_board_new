@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../../UI/Card/Card';
-import Label from '../../UI/Label/Label';
+import PostWidgetToolbar from '../../Navigation/PostWidgetToolbar/PostWidgetToolbar'
 import classes from './Post.css';
 import Routing from '../../../../../vendor/friendsofsymfony/jsrouting-bundle/Resources/public/js/router.min';
 
@@ -18,11 +18,7 @@ const post = props => {
                 <div className={classes.Title}>
                     {props.post.caption}
                 </div>
-                <div className={classes.PostWidgetToolbar}>
-                    <Label class='Label_grey'>Votes</Label>
-                    <Label class='Label_grey'>Comments</Label>
-                    <Label class='Label_grey'>Views</Label>
-                </div>
+                    <PostWidgetToolbar post={props.post}/>
             </Card>
         </div>
     );

@@ -18,3 +18,14 @@
     margin: 4px;
     padding: 5px;
 }
+
+.Label_widget {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: #474A51;
+    border-radius: 3px;
+    margin: 2px;
+    padding: 5px;
+    width: 100%;
+}
