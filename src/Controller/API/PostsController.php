@@ -54,7 +54,7 @@ class PostsController extends AbstractController
         if ($this->getUser()) {
             $userId = $this->getUser()->getId();
         }
-        $uuid = $request->request->get('uuid');
+        $uuid = json_decode($request->getContent(), true)['uuid'];
         $post = $postService->getPost(Uuid::fromString($uuid), $userId);
 
         return new JsonResponse($post);

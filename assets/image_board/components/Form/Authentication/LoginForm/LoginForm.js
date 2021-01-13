@@ -32,10 +32,8 @@ class LoginForm extends Component {
         };
         Axios.post(Routing.generate('authenticate_login'), data).then(response => {
             window.location.href = Routing.generate('index');
-            console.log(response);
         }).catch(error => {
             const errors = error.response.data.error;
-            console.log(errors)
             this.setState({errors: [...errors]}
             )
         })

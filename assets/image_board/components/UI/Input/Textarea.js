@@ -1,17 +1,20 @@
 import React from 'react';
 import classes from './Input.css';
 
-const input = props => {
+const textarea = props => {
     return (
         <>
-            <input
+            <textarea
                 className={classes.Input}
-                type={props.type}
                 onBlur={props.onBlur}
                 placeholder={props.placeholder}
                 onChange={props.onChange}
+                rows={props.rows}
+                cols={props.cols}
+                maxLength={200}
+                value={props.value}
             />
         </>
     );
 }
-export default input;
+export default textarea;

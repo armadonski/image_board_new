@@ -61,7 +61,7 @@ class User implements UserInterface
 
     public function setEmail(string $email): self
     {
-        $this->email = $email;
+        $this->email = trim($email);
 
         return $this;
     }
@@ -73,7 +73,7 @@ class User implements UserInterface
 
     public function setNickname(string $nickname): self
     {
-        $this->nickname = $nickname;
+        $this->nickname = trim($nickname);
 
         return $this;
     }

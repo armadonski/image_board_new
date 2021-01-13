@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import classes from './RegistrationForm.css';
 import Input from '../../../UI/Input/Input';
 import Button from '../../../UI/Button/Button';
-import Logo from '../../../Logo/Logo';
 import Card from '../../../UI/Card/Card';
 import Label from '../../../UI/Label/Label';
 import Axios from "axios";
@@ -78,7 +77,6 @@ class RegistrationForm extends Component {
             data
         ).then((response) => {
             window.location.href = Routing.generate('index');
-            console.log(response);
         }).catch((error) => {
             const errors = error.response.data;
             this.setState(typeof errors !== 'object' ? {errors: [...errors]} : {
@@ -96,11 +94,9 @@ class RegistrationForm extends Component {
             Axios.post(Routing.generate('authenticate_check_username'),
                 data
             ).then((response) => {
-                console.log(response)
             }).catch((error) => {
                 const errors = error.response.data;
                 const errorMessage = this.mapObjectsToArray(errors);
-                console.log(errorMessage);
                 this.setState({errors: [...errorMessage]})
             })
         }
@@ -115,11 +111,9 @@ class RegistrationForm extends Component {
             Axios.post(Routing.generate('authenticate_check_email'),
                 data
             ).then((response) => {
-                console.log(response)
             }).catch((error) => {
                 const errors = error.response.data;
                 const errorMessage = this.mapObjectsToArray(errors);
-                console.log(errorMessage);
                 this.setState({errors: [...errorMessage]})
             })
         }

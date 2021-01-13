@@ -5,6 +5,7 @@ import Masonry from 'react-masonry-component';
 import Axios from "axios";
 import Routing from '../../../../vendor/friendsofsymfony/jsrouting-bundle/Resources/public/js/router.min';
 import TrackVisibility from "../hoc/TrackVisibility/TrackVisibility";
+import Card from '../UI/Card/Card';
 
 const routes = require('../../../../public/js/fos_js_routes.json');
 Routing.setRoutingData(routes);
@@ -24,7 +25,6 @@ class Posts extends Component {
             }
         ))
             .catch(error => {
-                console.log(error)
             })
             .then(response => {
                     const responseData = response.data.rows;
@@ -37,9 +37,11 @@ class Posts extends Component {
                             uuid={item.uuid}
                             visible={this.visibilityHandler}
                             key={item.uuid}>
-                            <Post
-                                post={item}
-                            />
+                            <Card>
+                                <Post
+                                    post={item}
+                                />
+                            </Card>
                         </TrackVisibility>;
                     });
 
@@ -66,7 +68,7 @@ class Posts extends Component {
 
     visibilityHandler = (uuid) => {
         const postData = this.state.postData;
-        postData.map(item=>{
+        postData.map(item => {
             if (item.length && uuid === item[item.length - 1].uuid) {
                 const prevPage = this.state.currentPage;
                 this.setState({

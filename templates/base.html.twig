@@ -5,6 +5,7 @@
     <title>{% block title %}{% endblock %}</title>
     {% block stylesheets %}
         {{ encore_entry_link_tags('Button') }}
+        {{ encore_entry_link_tags('Comments') }}
         {{ encore_entry_link_tags('Logo') }}
         {{ encore_entry_link_tags('Layout') }}
         {{ encore_entry_link_tags('Toolbar') }}
@@ -15,6 +16,7 @@
         {{ encore_entry_link_tags('Label') }}
         {{ encore_entry_link_tags('BackToIndex') }}
         {{ encore_entry_link_tags('PostWidgetToolbar') }}
+        {{ encore_entry_link_tags('CommentForm') }}
     {% endblock %}
 </head>
 <body>

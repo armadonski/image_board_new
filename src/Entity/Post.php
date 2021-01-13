@@ -120,7 +120,7 @@ class Post
 
     public function setCaption(?string $caption): self
     {
-        $this->caption = $caption;
+        $this->caption = trim($caption);
 
         return $this;
     }
@@ -132,7 +132,7 @@ class Post
 
     public function setTags(string $tags): self
     {
-        $this->tags = $tags;
+        $this->tags = trim($tags);
 
         return $this;
     }

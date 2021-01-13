@@ -1,3 +1,17 @@
 .PostPage {
-
+    min-width: 700px;
+    max-width: 700px;
+    margin: 2px;
+    transition: ease 1s;
+    border-radius: 3px;
+}
+@media (max-width: 1000px) {
+    .PostPage {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+img {
+    object-fit: contain;
+    width: 100%;
 }

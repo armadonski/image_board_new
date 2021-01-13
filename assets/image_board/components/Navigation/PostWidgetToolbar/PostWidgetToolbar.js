@@ -61,20 +61,20 @@ class PostWidgetToolbar extends Component {
     }
 
     render() {
-        const uuid = this.props.post.uuid;
+        let uuid = this.props.post.uuid;
         let voted = this.state.voted;
 
-        console.log(this.props)
         return (
             <div className={classes.PostWidgetToolbar}>
                 <Label class='Label_widget'>
                     {this.state.points ? this.state.points : 0}
                     <span className={[classes.SpanStyle, voted === "1" ? classes.UpVote : null].join(' ')}>
-                    <MdThumbUp onClick={voted ? () => this.unlikeHandler(uuid) : () => this.likeHandler(uuid)}/>
+                    <MdThumbUp onClick={voted === '1' ? () => this.unlikeHandler(uuid) : () => this.likeHandler(uuid)}/>
                 </span>
                     <span
                         className={[classes.SpanStyle, voted === "-1" ? classes.DownVote : null].join(' ')}>
-                    <MdThumbDown onClick={voted ? () => this.unlikeHandler(uuid) : () => this.dislikeHandler(uuid)}/>
+                    <MdThumbDown
+                        onClick={voted === '-1' ? () => this.unlikeHandler(uuid) : () => this.dislikeHandler(uuid)}/>
                 </span>
                 </Label>
                 <Label class='Label_widget'>
@@ -83,12 +83,12 @@ class PostWidgetToolbar extends Component {
                     <MdChat/>
                 </span>
                 </Label>
-                <Label class='Label_widget'>
-                    Views
-                    <span className={classes.SpanStyle}>
-                    <MdRemoveRedEye/>
-                </span>
-                </Label>
+                {/*<Label class='Label_widget'>*/}
+                {/*    Views*/}
+                {/*    <span className={classes.SpanStyle}>*/}
+                {/*    <MdRemoveRedEye/>*/}
+                {/*</span>*/}
+                {/*</Label>*/}
             </div>
         );
     }

@@ -85,7 +85,6 @@ class Upload extends Component {
         const caption = this.state.caption;
         const tags = this.state.tags;
         const file = this.state.files[0];
-        console.log(this.state.files[0]);
         const fd = new FormData();
         fd.append('caption', caption);
         fd.append('tags', tags);

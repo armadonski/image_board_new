@@ -17,6 +17,7 @@ class CommentRepository extends EntityRepository
             ->join(User::class, 'u', Join::WITH, 'c.user = u.id')
             ->join(Post::class, 'p', Join::WITH, 'p.id = c.post')
             ->where('p.uuid = :uuid')
+            ->orderBy('c.created','desc')
             ->setParameter('uuid', $uuid)
             ->getQuery()
             ->getResult();

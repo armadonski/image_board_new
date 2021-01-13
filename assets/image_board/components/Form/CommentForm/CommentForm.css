@@ -1,0 +1,13 @@
+.CommentForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.CommentForm > button {
+    margin-left: auto;
+}
+
+.Errors {
+    width: 100%;
+}

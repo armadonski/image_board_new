@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Entity\Comment;
 use App\Services\Fetcher\CommentFetcher;
 use App\Services\Fetcher\PostFetcher;
+use App\Services\Validator\CommentValidator;
 use Doctrine\ORM\EntityManagerInterface;
 use Ramsey\Uuid\UuidInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -14,12 +15,19 @@ class CommentService
     private $em;
     private $postFetcher;
     private $commentFetcher;
+    private $commentValidator;
 
-    public function __construct(EntityManagerInterface $em, PostFetcher $postFetcher, CommentFetcher $commentFetcher)
+    public function __construct(
+        EntityManagerInterface $em,
+        PostFetcher $postFetcher,
+        CommentFetcher $commentFetcher,
+        CommentValidator $commentValidator
+    )
     {
         $this->em = $em;
         $this->postFetcher = $postFetcher;
         $this->commentFetcher = $commentFetcher;
+        $this->commentValidator = $commentValidator;
     }
 
     public function getAllComments(UuidInterface $uuid): JsonResponse
@@ -34,7 +42,7 @@ class CommentService
         return new JsonResponse($serialized);
     }
 
-    public function postComment(UuidInterface $postUuid, string $content, int $userId): JsonResponse
+    public function postComment(UuidInterface $postUuid, ?string $content, int $userId): JsonResponse
     {
         $post = $this->postFetcher->getPostByUuid($postUuid);
         $comment = (new Comment())
@@ -42,6 +50,7 @@ class CommentService
             ->setContent($content)
             ->setUser($userId)
             ->setCreated();
+        $this->commentValidator->validate($comment);
         $this->em->persist($comment);
         $this->em->flush();
 

@@ -2,14 +2,16 @@
 
 namespace App\Entity;
 
+use App\Model\ModelInterface;
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CommentRepository")
  * @ORM\Table(name="comment")
  */
-class Comment
+class Comment implements ModelInterface
 {
     /**
      * @ORM\Id
@@ -32,6 +34,8 @@ class Comment
 
     /**
      * @ORM\Column(type="string", nullable=false)
+     * @Assert\NotBlank(message="You should type something if you would like to comment")
+     * @Assert\Length(max="140", maxMessage="You can type this much.", min="2", minMessage="You should at least say hi.")
      */
     private $content;
 
@@ -90,9 +94,9 @@ class Comment
         return $this->content;
     }
 
-    public function setContent(string $content): self
+    public function setContent(?string $content): self
     {
-        $this->content = $content;
+        $this->content = trim($content);
 
         return $this;
     }
