@@ -9,7 +9,7 @@ class ProfilePage extends Component {
     render() {
         return (
             <div className={classes.ProfilePage}>
-                <Avatar user={this.props.user}/>
+                <Avatar user={this.props.user} metadata/>
                 <BackToIndex/>
                 <div className={classes.Tabs}>
                     Posts

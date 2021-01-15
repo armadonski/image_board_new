@@ -56,9 +56,15 @@ class PostPage extends Component {
             <div className={classes.PostPage}>
                 <BackToIndex/>
                 {post}
-                <CommentForm posted={this.updateCommentsHandler} uuid={this.props.post}/>
-                <Comments noOfComments={this.state.post.comments} posted={this.updateCommentsHandler}
-                          update={this.state.updateComments} uuid={this.props.post}/>
+                <CommentForm
+                    posted={this.updateCommentsHandler}
+                    uuid={this.props.post}
+                />
+                <Comments
+                    noOfComments={this.state.post.comments}
+                    posted={this.updateCommentsHandler}
+                    update={this.state.updateComments}
+                    uuid={this.props.post}/>
             </div>
         );
     }

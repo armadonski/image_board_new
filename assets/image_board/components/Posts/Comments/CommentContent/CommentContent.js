@@ -1,13 +1,27 @@
 import React from 'react';
 import Moment from "moment";
 import classes from './CommentContent.css';
+import Avatar from '../../../UI/Avatar/Avatar'
 
 const commentContent = props => {
     const comments = props.commentContent.map((comment, key) => {
         return <div className={classes.CommentWidget} key={key}>
-            {comment.nickname}
-            {comment.content}
-            {comment.created ? Moment(comment.created.date).format('y-m-d') : null}
+            <div className={classes.AvatarWidget}>
+                <Avatar small/>
+                <div
+                    className={classes.AvatarMeta}>
+                    {
+                        comment.nickname
+                    } • {
+                    comment.created ?
+                        Moment(comment.created.date).fromNow() :
+                        null
+                }
+                </div>
+            </div>
+            <div className={classes.CommentText}>
+                {comment.content}
+            </div>
         </div>;
     });
 
