@@ -10,6 +10,8 @@ const routes = require('../../../../../public/js/fos_js_routes.json');
 Routing.setRoutingData(routes);
 
 class Comments extends Component {
+    postsRef = React.createRef();
+
     state = {
         comments: []
     }
@@ -20,10 +22,10 @@ class Comments extends Component {
         }
         Axios.get(Routing.generate('get_comments', uuid))
             .then(response => {
-                const noOfComments = this.state.noOfComments;
                 this.setState({
                     comments: response.data
                 })
+                this.postsRef.current.scrollIntoView({behavior: 'smooth', block: 'start'});
             })
             .catch(error => {
             })
@@ -41,7 +43,9 @@ class Comments extends Component {
     }
 
     componentDidMount() {
-        this.getComments();
+        if (this.props.loadOnInit) {
+            this.loadCommentsHandler();
+        }
     }
 
     render() {
@@ -49,7 +53,7 @@ class Comments extends Component {
         return (
             <div className={classes.Comments}>
                 <Card>
-                    <div className={classes.CommentWidget}>
+                    <div ref={this.postsRef} className={classes.CommentWidget}>
                         {
                             this.props.noOfComments !== "0" ?
                                 this.state.comments.length ?

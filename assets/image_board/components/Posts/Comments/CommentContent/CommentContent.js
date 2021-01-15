@@ -5,6 +5,9 @@ import Avatar from '../../../UI/Avatar/Avatar'
 
 const commentContent = props => {
     const comments = props.commentContent.map((comment, key) => {
+        let date = new Date(comment.created.date);
+        let offset = date.getTimezoneOffset() * 60000;
+        let currentDate = date.getTime() - offset;
         return <div className={classes.CommentWidget} key={key}>
             <div className={classes.AvatarWidget}>
                 <Avatar small/>
@@ -14,7 +17,7 @@ const commentContent = props => {
                         comment.nickname
                     } • {
                     comment.created ?
-                        Moment(comment.created.date).fromNow() :
+                        Moment(currentDate).fromNow() :
                         null
                 }
                 </div>

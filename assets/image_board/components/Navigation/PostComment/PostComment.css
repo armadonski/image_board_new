@@ -1,0 +1,17 @@
+.SpanStyle {
+    transition: ease 1s;
+    padding-left: 5px;
+}
+
+span {
+    cursor: pointer;
+    margin: 2px;
+}
+
+.Modal {
+    z-index: 1000000;
+}
+
+.Modal:hover {
+    background: red;
+}

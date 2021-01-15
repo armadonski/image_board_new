@@ -9,8 +9,9 @@
     flex-direction: column;
     cursor: pointer;
     margin-bottom: 16px;
-    background: #2E3035;
+    background: #2d2e2d;
     padding: 10px;
+    transition: ease 1s;
 }
 
 .CommentWidget:hover {

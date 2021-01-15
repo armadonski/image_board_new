@@ -46,7 +46,7 @@ class NavButtons extends Component {
             <Button clicked={this.signUpPageHandler}>Sign Up</Button>
         </div> :
         <div className={classes.NavBar}>
-            <Button clicked={this.profileHandler}>Profile</Button>
+            {/*<Button clicked={this.profileHandler}>Profile</Button>*/}
             <Button clicked={this.uploadHandler}>Upload</Button>
             <Button clicked={this.logoutHandler}>Logout</Button>
         </div>;

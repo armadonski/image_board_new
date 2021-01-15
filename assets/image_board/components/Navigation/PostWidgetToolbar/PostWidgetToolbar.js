@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import Label from "../../UI/Label/Label";
 import classes from './PostWidgetToolbar.css';
 import Axios from "axios";
-import {MdRemoveRedEye, MdThumbUp, MdThumbDown, MdChat} from 'react-icons/md';
+import {MdRemoveRedEye, MdThumbUp, MdThumbDown} from 'react-icons/md';
 import Routing from '../../../../../vendor/friendsofsymfony/jsrouting-bundle/Resources/public/js/router.min';
+import PostComment from "../PostComment/PostComment";
 
 const routes = require('../../../../../public/js/fos_js_routes.json');
 Routing.setRoutingData(routes);
@@ -79,9 +80,7 @@ class PostWidgetToolbar extends Component {
                 </Label>
                 <Label class='Label_widget'>
                     {this.props.post.comments}
-                    <span className={classes.SpanStyle}>
-                    <MdChat/>
-                </span>
+                    <PostComment uuid={uuid}/>
                 </Label>
                 {/*<Label class='Label_widget'>*/}
                 {/*    Views*/}
