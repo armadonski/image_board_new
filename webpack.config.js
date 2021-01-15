@@ -27,6 +27,7 @@ Encore
     .addStyleEntry('Logo','./assets/image_board/components/Logo/Logo.css')
     .addStyleEntry('Post','./assets/image_board/components/Posts/Post/Post.css')
     .addStyleEntry('Comments','./assets/image_board/components/Posts/Comments/Comments.css')
+    .addStyleEntry('CommentContent','./assets/image_board/components/Posts/Comments/CommentContent/CommentContent.css')
     .addStyleEntry('Upload','./assets/image_board/components/Posts/Upload/Upload.css')
     .addStyleEntry('PostPage','./assets/image_board/components/Posts/PostPage/PostPage.css')
     .addStyleEntry('PostWidgetToolbar','./assets/image_board/components/Navigation/PostWidgetToolbar/PostWidgetToolbar.css')

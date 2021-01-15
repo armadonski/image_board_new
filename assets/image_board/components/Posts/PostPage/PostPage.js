@@ -38,6 +38,12 @@ class PostPage extends Component {
         this.getPost(this.props.post);
     }
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (this.state.updateComments) {
+            this.getPost(this.props.post);
+        }
+    }
+
     updateCommentsHandler = () => {
         this.setState({
             updateComments: !this.state.updateComments
@@ -46,13 +52,13 @@ class PostPage extends Component {
 
     render() {
         const post = this.state.postElement;
-
         return (
             <div className={classes.PostPage}>
                 <BackToIndex/>
                 {post}
                 <CommentForm posted={this.updateCommentsHandler} uuid={this.props.post}/>
-                <Comments posted={this.updateCommentsHandler} update={this.state.updateComments} uuid={this.props.post}/>
+                <Comments noOfComments={this.state.post.comments} posted={this.updateCommentsHandler}
+                          update={this.state.updateComments} uuid={this.props.post}/>
             </div>
         );
     }

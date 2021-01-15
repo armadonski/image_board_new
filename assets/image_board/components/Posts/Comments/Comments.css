@@ -1,3 +1,11 @@
 .Comments {
+    /*width: 100%;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+}
 
+.CommentWidget {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }

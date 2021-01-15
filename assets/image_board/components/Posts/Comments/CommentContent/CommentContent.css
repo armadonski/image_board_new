@@ -1,0 +1,12 @@
+.CommentContent {
+    background: #2E3035;
+    width: 100%;
+}
+
+.CommentWidget {
+
+}
+.CommentWidget:hover{
+    transition: ease 1s;
+    background: #33353B;
+}
