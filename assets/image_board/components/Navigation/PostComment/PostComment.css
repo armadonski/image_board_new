@@ -8,10 +8,7 @@ span {
     margin: 2px;
 }
 
-.Modal {
-    z-index: 1000000;
-}
-
-.Modal:hover {
-    background: red;
+.CommentContent {
+    height: 700px;
+    overflow: scroll;
 }

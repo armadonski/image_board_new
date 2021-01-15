@@ -36,7 +36,9 @@ class PostComment extends Component {
         return (
             <>
                 <Modal show={this.state.showComment} modalClosed={this.modalCloseHandler}>
-                    {comments}
+                    <div className={classes.CommentContent}>
+                        {comments}
+                    </div>
                 </Modal>
                 <span
                     className={classes.SpanStyle}
