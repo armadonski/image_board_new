@@ -24,7 +24,7 @@ class PostPage extends Component {
         };
         Axios.post(Routing.generate('get_post'), data)
             .then(response => {
-                const postElement = <Card><Post post={response.data}/></Card>;
+                const postElement = <Card><Post user={this.props.user} post={response.data}/></Card>;
                 this.setState({
                     post: response.data,
                     postElement: postElement
