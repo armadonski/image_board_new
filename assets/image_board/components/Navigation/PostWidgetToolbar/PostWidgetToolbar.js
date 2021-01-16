@@ -10,7 +10,6 @@ const routes = require('../../../../../public/js/fos_js_routes.json');
 Routing.setRoutingData(routes);
 
 class PostWidgetToolbar extends Component {
-
     state = {
         voted: this.props.post.voted,
         points: this.props.post.points
@@ -70,12 +69,23 @@ class PostWidgetToolbar extends Component {
                 <Label class='Label_widget'>
                     {this.state.points ? this.state.points : 0}
                     <span className={[classes.SpanStyle, voted === "1" ? classes.UpVote : null].join(' ')}>
-                    <MdThumbUp onClick={voted === '1' ? () => this.unlikeHandler(uuid) : () => this.likeHandler(uuid)}/>
+                    <MdThumbUp
+                        onClick={
+                            this.props.user ?
+                                voted === '1' ? () => this.unlikeHandler(uuid) : () => this.likeHandler(uuid) :
+                                null
+                        }
+                    />
                 </span>
                     <span
                         className={[classes.SpanStyle, voted === "-1" ? classes.DownVote : null].join(' ')}>
                     <MdThumbDown
-                        onClick={voted === '-1' ? () => this.unlikeHandler(uuid) : () => this.dislikeHandler(uuid)}/>
+                        onClick={
+                            this.props.user ?
+                                voted === '-1' ? () => this.unlikeHandler(uuid) : () => this.dislikeHandler(uuid) :
+                                null
+                        }
+                    />
                 </span>
                 </Label>
                 <Label class='Label_widget'>

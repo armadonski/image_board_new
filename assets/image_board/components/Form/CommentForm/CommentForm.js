@@ -14,7 +14,6 @@ class CommentForm extends Component {
     state = {
         comment: null,
         errors: []
-
     }
 
     commentHandler = () => {
@@ -66,7 +65,11 @@ class CommentForm extends Component {
                 <div className={classes.CommentForm}>
                     <Textarea placeholder='Write a comment' onChange={this.commentTextHandler} cols={3} rows={3}/>
                     <div className={classes.Errors}>{errors}</div>
-                    <Button clicked={this.commentHandler} background='NoBackground'>Post</Button>
+                    <Button clicked={
+                        this.props.user ?
+                            this.commentHandler :
+                            null
+                    } background='NoBackground'>Post</Button>
                 </div>
             </Card>
         );

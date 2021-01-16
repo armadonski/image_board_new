@@ -7,7 +7,7 @@ class ImageBoard extends Component {
     render() {
         return (
             <div>
-                <Posts />
+                <Posts user={user}/>
             </div>
         );
     }

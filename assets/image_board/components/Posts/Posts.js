@@ -39,6 +39,7 @@ class Posts extends Component {
                             key={item.uuid}>
                             <Card>
                                 <Post
+                                    user={this.props.user}
                                     post={item}
                                 />
                             </Card>

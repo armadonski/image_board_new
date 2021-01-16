@@ -57,6 +57,7 @@ class PostPage extends Component {
                 <BackToIndex/>
                 {post}
                 <CommentForm
+                    user={this.props.user}
                     posted={this.updateCommentsHandler}
                     uuid={this.props.post}
                 />

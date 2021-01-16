@@ -16,7 +16,7 @@ const post = props => {
                 <div className={classes.Title}>
                     {props.post.caption}
                 </div>
-                    <PostWidgetToolbar post={props.post}/>
+                    <PostWidgetToolbar user={props.user} post={props.post}/>
         </div>
     );
 }

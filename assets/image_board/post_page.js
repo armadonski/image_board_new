@@ -8,7 +8,7 @@ ReactDOM.render(
     <React.StrictMode>
         <Layout user={user}>
             <PostPageContainer>
-                <PostPage post={post}/>
+                <PostPage user={user} post={post}/>
             </PostPageContainer>
         </Layout>
     </React.StrictMode>,
