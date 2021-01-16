@@ -25,6 +25,7 @@ Encore
     .addStyleEntry('BackToIndex','./assets/image_board/components/Navigation/BackToIndex/BackToIndex.css')
     .addStyleEntry('NavButtons','./assets/image_board/components/Navigation/Toolbar/NavButtons/NavButtons.css')
     .addStyleEntry('Button','./assets/image_board/components/UI/Button/Button.css')
+    .addStyleEntry('Tooltip','./assets/image_board/components/UI/Tooltip/Tooltip.css')
     .addStyleEntry('Logo','./assets/image_board/components/Logo/Logo.css')
     .addStyleEntry('Post','./assets/image_board/components/Posts/Post/Post.css')
     .addStyleEntry('Comments','./assets/image_board/components/Posts/Comments/Comments.css')

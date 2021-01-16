@@ -60,6 +60,10 @@ class PostWidgetToolbar extends Component {
             })
     }
 
+    redirectToLogin = () => {
+        window.location.href = Routing.generate('authentication');
+    }
+
     render() {
         let uuid = this.props.post.uuid;
         let voted = this.state.voted;
@@ -73,7 +77,7 @@ class PostWidgetToolbar extends Component {
                         onClick={
                             this.props.user ?
                                 voted === '1' ? () => this.unlikeHandler(uuid) : () => this.likeHandler(uuid) :
-                                null
+                                this.redirectToLogin
                         }
                     />
                 </span>
@@ -83,7 +87,7 @@ class PostWidgetToolbar extends Component {
                         onClick={
                             this.props.user ?
                                 voted === '-1' ? () => this.unlikeHandler(uuid) : () => this.dislikeHandler(uuid) :
-                                null
+                                this.redirectToLogin
                         }
                     />
                 </span>
