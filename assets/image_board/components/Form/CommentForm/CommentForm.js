@@ -6,6 +6,7 @@ import classes from './CommentForm.css';
 import Axios from 'axios';
 import Routing from '../../../../../vendor/friendsofsymfony/jsrouting-bundle/Resources/public/js/router.min';
 import Label from "../../UI/Label/Label";
+import Tooltip from '../../UI/Tooltip/Tooltip';
 
 const routes = require('../../../../../public/js/fos_js_routes.json');
 Routing.setRoutingData(routes);
@@ -52,31 +53,28 @@ class CommentForm extends Component {
         window.location.href = Routing.generate('authentication');
     }
 
-    displayErrors = () => {
-        return this.state.errors ? this.state.errors.map((error, key) =>
-            (
-                <Label class={'Label_error'} key={key}>
-                    {error}
-                </Label>
-            )
-        ) : null;
+    blurTooltip = () => {
+        this.setState(
+            {
+                errors: []
+            }
+        )
     }
 
     render() {
-        const errors = this.displayErrors();
-
         return (
             <Card>
                 <div className={classes.CommentForm}>
                     <Textarea placeholder='Write a comment' onChange={this.commentTextHandler} cols={3} rows={3}/>
-                    <div className={classes.Errors}>{errors}</div>
                     <div className={classes.PostButton}>
-                        <Button clicked={
-                            this.props.user ?
-                                this.commentHandler : this.redirectToLogin
-                        } background='NoBackground'>
-                            Post
-                        </Button>
+                        <Tooltip error blur={this.blurTooltip} show={this.state.errors.length} tooltipContent={this.state.errors}>
+                            <Button clicked={
+                                this.props.user ?
+                                    this.commentHandler : this.redirectToLogin
+                            } background='NoBackground'>
+                                Post
+                            </Button>
+                        </Tooltip>
                     </div>
                 </div>
             </Card>

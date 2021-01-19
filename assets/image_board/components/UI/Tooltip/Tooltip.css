@@ -18,6 +18,10 @@
     border-radius: 6px;
 }
 
+.Error{
+    background: #8c0f0f;
+}
+
 .TooltipShow {
     display: block;
 }

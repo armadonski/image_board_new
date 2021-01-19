@@ -54,10 +54,12 @@ class PostPage extends Component {
         const post = this.state.postElement;
         return (
             <div className={classes.PostPage}>
-                <BackToIndex/>
-                <div className={classes.Post}>
-                    {post}
-                </div>
+                <Card>
+                    <BackToIndex/>
+                    <div className={classes.Post}>
+                        {post}
+                    </div>
+                </Card>
                 <CommentForm
                     user={this.props.user}
                     posted={this.updateCommentsHandler}
@@ -68,6 +70,7 @@ class PostPage extends Component {
                     posted={this.updateCommentsHandler}
                     update={this.state.updateComments}
                     uuid={this.props.post}/>
+
             </div>
         );
     }

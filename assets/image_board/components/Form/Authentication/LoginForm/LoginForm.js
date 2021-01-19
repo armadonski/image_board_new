@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import classes from './LoginForm.css';
 import Input from '../../../UI/Input/Input';
 import Button from '../../../UI/Button/Button';
-import Logo from '../../../Logo/Logo';
+import Tooltip from '../../../UI/Tooltip/Tooltip';
 import Card from '../../../UI/Card/Card';
 import Label from '../../../UI/Label/Label';
 import Axios from "axios";
@@ -34,19 +34,9 @@ class LoginForm extends Component {
             window.location.href = Routing.generate('index');
         }).catch(error => {
             const errors = error.response.data.error;
-            this.setState({errors: [...errors]}
+            this.setState({errors: errors}
             )
         })
-    }
-
-    displayErrors = () => {
-        const error = this.state.errors;
-        return (
-            error ?
-                <Label class={'Label_error'}>
-                    {error}
-                </Label> : null
-        );
     }
 
     emailHandler = e => {
@@ -61,9 +51,15 @@ class LoginForm extends Component {
         })
     }
 
-    render() {
-        const errors = this.displayErrors();
+    blurTooltip = () => {
+        this.setState(
+            {
+                errors: null
+            }
+        )
+    }
 
+    render() {
         return (
             <>
                 <div className={classes.FormGroup}>
@@ -72,11 +68,12 @@ class LoginForm extends Component {
                             <Input type='text' onChange={this.emailHandler} placeholder='Enter your email address'/>
                             <Input type='password' onChange={this.passwordHandler} placeholder='Enter your password'/>
                         </div>
-                        <div className={classes.Errors}>{errors}</div>
                     </Card>
                 </div>
                 <div className={classes.ButtonGroup}>
-                    <Button clicked={this.loginHandler}>Sign In</Button>
+                    <Tooltip tooltipContent={this.state.errors} error blur={this.blurTooltip} show={this.state.errors}>
+                        <Button clicked={this.loginHandler}>Sign In</Button>
+                    </Tooltip>
                     <Button background='NoBackground' clicked={this.signUpPageHandler}>Sign Up</Button>
                 </div>
             </>
