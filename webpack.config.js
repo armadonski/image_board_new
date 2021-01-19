@@ -23,6 +23,7 @@ Encore
     .addStyleEntry('Toolbar','./assets/image_board/components/Navigation/Toolbar/Toolbar.css')
     .addStyleEntry('PostComment','./assets/image_board/components/Navigation/PostComment/PostComment.css')
     .addStyleEntry('BackToIndex','./assets/image_board/components/Navigation/BackToIndex/BackToIndex.css')
+    .addStyleEntry('Index','./assets/image_board/index.css')
     .addStyleEntry('NavButtons','./assets/image_board/components/Navigation/Toolbar/NavButtons/NavButtons.css')
     .addStyleEntry('Button','./assets/image_board/components/UI/Button/Button.css')
     .addStyleEntry('Tooltip','./assets/image_board/components/UI/Tooltip/Tooltip.css')

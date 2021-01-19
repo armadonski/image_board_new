@@ -29,7 +29,7 @@ abstract class AbstractValidator
             if ($errors->count()) {
                 foreach ($errors as $error) {
                     /** @var ConstraintViolation $error */
-                    $errorMessages[] = $error->getMessage();
+                    $errorMessages[$error->getPropertyPath()] = $error->getMessage();
                 }
                 $exception = new $exception(json_encode($errorMessages, JSON_OBJECT_AS_ARRAY));
 

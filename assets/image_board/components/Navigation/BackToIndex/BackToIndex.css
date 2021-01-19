@@ -2,6 +2,8 @@
     color: white;
     cursor: pointer;
     text-decoration: none;
+    max-width: 10%;
+    font-size: xx-large;
 }
 
 .Link:hover {

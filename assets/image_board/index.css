@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'MyWebFont';
+    src: url("Roboto-Regular.ttf")
+}
+body {
+    font-family: MyWebFont, serif;
+}

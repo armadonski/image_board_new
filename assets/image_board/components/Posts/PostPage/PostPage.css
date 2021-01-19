@@ -15,3 +15,7 @@ img {
     object-fit: contain;
     width: 100%;
 }
+
+.Post {
+    font-weight: bold;
+}

@@ -5,6 +5,7 @@ import Axios from "axios";
 import {MdRemoveRedEye, MdThumbUp, MdThumbDown} from 'react-icons/md';
 import Routing from '../../../../../vendor/friendsofsymfony/jsrouting-bundle/Resources/public/js/router.min';
 import PostComment from "../PostComment/PostComment";
+import Tooltip from '../../UI/Tooltip/Tooltip';
 
 const routes = require('../../../../../public/js/fos_js_routes.json');
 Routing.setRoutingData(routes);

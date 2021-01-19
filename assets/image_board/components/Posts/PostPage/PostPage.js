@@ -24,7 +24,7 @@ class PostPage extends Component {
         };
         Axios.post(Routing.generate('get_post'), data)
             .then(response => {
-                const postElement = <Card><Post user={this.props.user} post={response.data}/></Card>;
+                const postElement = <Card><Post titleLarge user={this.props.user} post={response.data}/></Card>;
                 this.setState({
                     post: response.data,
                     postElement: postElement
@@ -55,7 +55,9 @@ class PostPage extends Component {
         return (
             <div className={classes.PostPage}>
                 <BackToIndex/>
-                {post}
+                <div className={classes.Post}>
+                    {post}
+                </div>
                 <CommentForm
                     user={this.props.user}
                     posted={this.updateCommentsHandler}

@@ -2,11 +2,9 @@
 {% block title %}Index{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
-    {{ encore_entry_link_tags('Post') }}
     {{ encore_entry_link_tags('Posts') }}
     {{ encore_entry_link_tags('PostPage') }}
     {{ encore_entry_link_tags('Card') }}
-    {{ encore_entry_link_tags('NavButtons') }}
 {% endblock %}
 {% block body %}
     <div id="index"></div>

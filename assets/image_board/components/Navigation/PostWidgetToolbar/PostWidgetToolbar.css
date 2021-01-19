@@ -6,12 +6,6 @@
     border-radius: 3px;
 }
 
-/*.PostWidgetToolbar:hover {*/
-/*    background: #999999;*/
-/*    opacity: 0.8;*/
-/*    transition: ease 1s;*/
-/*}*/
-
 .PostWidgetToolbar > div > span {
     cursor: pointer;
     margin: 2px;

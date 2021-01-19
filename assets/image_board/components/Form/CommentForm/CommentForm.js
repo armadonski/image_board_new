@@ -6,8 +6,6 @@ import classes from './CommentForm.css';
 import Axios from 'axios';
 import Routing from '../../../../../vendor/friendsofsymfony/jsrouting-bundle/Resources/public/js/router.min';
 import Label from "../../UI/Label/Label";
-import Tooltip from '../../UI/Tooltip/Tooltip';
-import NavButtons from '../../Navigation/Toolbar/NavButtons/NavButtons';
 
 const routes = require('../../../../../public/js/fos_js_routes.json');
 Routing.setRoutingData(routes);
@@ -16,7 +14,6 @@ class CommentForm extends Component {
     state = {
         comment: null,
         errors: [],
-        showLogin: false
     }
 
     commentHandler = () => {
@@ -51,12 +48,9 @@ class CommentForm extends Component {
         )
     }
 
-    showLoginHandler = () => {
-        const currentShowLogin = this.state.showLogin;
-        this.setState({
-            showLogin: !currentShowLogin
-        });
-    };
+    redirectToLogin = () => {
+        window.location.href = Routing.generate('authentication');
+    }
 
     displayErrors = () => {
         return this.state.errors ? this.state.errors.map((error, key) =>
@@ -76,15 +70,14 @@ class CommentForm extends Component {
                 <div className={classes.CommentForm}>
                     <Textarea placeholder='Write a comment' onChange={this.commentTextHandler} cols={3} rows={3}/>
                     <div className={classes.Errors}>{errors}</div>
-                    <Tooltip blur={this.showLoginHandler} tooltipContent={<div>Please Login if you want to post a comment!</div>}
-                             show={this.state.showLogin}>
+                    <div className={classes.PostButton}>
                         <Button clicked={
                             this.props.user ?
-                                this.commentHandler : this.showLoginHandler
+                                this.commentHandler : this.redirectToLogin
                         } background='NoBackground'>
                             Post
                         </Button>
-                    </Tooltip>
+                    </div>
                 </div>
             </Card>
         );
