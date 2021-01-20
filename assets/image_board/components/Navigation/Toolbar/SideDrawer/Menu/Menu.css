@@ -1,0 +1,22 @@
+.Menu {
+    display: flex;
+    flex-direction: column;
+    background: gray;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-top: 50px;
+}
+
+.Menu > a {
+    margin: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.MenuContainer {
+    display: flex;
+    flex-direction: column;
+    font-size: xxx-large;
+    align-items: center;
+}

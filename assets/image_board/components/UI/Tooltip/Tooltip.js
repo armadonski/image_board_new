@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './Tooltip.css';
 
 const tooltip = props => {
-    console.log(props.tooltipContent)
     return (
         <div className={classes.Tooltip} onBlur={props.blur}>
             {props.children}
