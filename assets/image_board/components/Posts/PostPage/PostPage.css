@@ -5,12 +5,28 @@
     transition: ease 1s;
     border-radius: 3px;
 }
+.Post {
+    margin: 2px;
+    transition: ease 1s;
+    border-radius: 3px;
+}
+
 @media (max-width: 1000px) {
     .PostPage {
         max-width: 100%;
         width: 100%;
     }
+    .Post {
+        max-width: 100%;
+        width: 100%;
+        font-size: 1.7em;
+        word-spacing: 10px
+    }
+    .Comments {
+        font-size: 1.5em;
+    }
 }
+
 img {
     object-fit: contain;
     width: 100%;

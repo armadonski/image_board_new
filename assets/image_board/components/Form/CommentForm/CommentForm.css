@@ -11,3 +11,9 @@
 .PostButton {
     margin-left: auto;
 }
+
+@media (max-width: 1000px) {
+    .Errors {
+        font-size: 30px;
+    }
+}

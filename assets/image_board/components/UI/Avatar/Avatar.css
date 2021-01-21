@@ -16,10 +16,12 @@
     background-size: cover;
 }
 
-/*.Avatar > img {*/
-/*    width: 100%;*/
-/*    object-fit: contain;*/
-/*}*/
+@media (max-width: 1000px) {
+    .SmallAvatar {
+        height: 40px;
+        width: 40px;
+    }
+}
 
 .AvatarWidget {
     display: flex;

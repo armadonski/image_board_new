@@ -2,15 +2,10 @@ import React from 'react';
 import classes from './Logo.css';
 import Logo from '../../../../public/images/logo/logo.jpg';
 
-const logo = props => {
-    const indexHandler = () => {
-        window.location.href = '/';
-    };
-    return (
-        <div className={classes.Logo}>
-            <img onClick={indexHandler} src={Logo} alt="Logo"/>
-        </div>
-    );
-};
+const logo = props => (
+    <div className={classes.Logo}>
+        <a href='/'><img src={Logo} alt="Logo"/></a>
+    </div>
+);
 
 export default logo;

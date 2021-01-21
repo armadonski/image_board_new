@@ -50,7 +50,7 @@ class Menu extends Component {
                             </div>
                             : <div className={classes.Menu}>
                                 <a onClick={this.loginPageHandler}>Login</a>
-                                <a onClick={this.signUpPageHandler}>SignUp</a>
+                                <a onClick={this.signUpPageHandler}>Sign Up</a>
                             </div>
                         }
                     </div>

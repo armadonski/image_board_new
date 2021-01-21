@@ -8,12 +8,8 @@
     max-width: 400px;
 }
 
-
 .PostImage {
-    /*display: flex;*/
-    /*flex-direction: column;*/
     transition: ease 1s;
-    /*background: #474A51;*/
 }
 
 .PostImage > img {
@@ -25,25 +21,21 @@
     .Post {
         max-width: 100%;
         width: 100%;
-        font-size: xx-large;
+        font-size: 1.7em;
         word-spacing: 10px
     }
 }
 
 .Title {
+    margin-bottom: 50px;
     background: #313131;
     height: 10%;
     width: 100%;
     box-sizing: border-box;
     padding: 10px;
+    color: #F7842B;
+    font-weight: bold;
     text-align: center;
-    color: #F4F4F6;
-}
-
-.TitleLarge {
-    font-size: xx-large;
-    font-weight: lighter;
-    text-align: left;
 }
 
 .Comments {

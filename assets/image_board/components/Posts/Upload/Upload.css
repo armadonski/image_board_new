@@ -17,7 +17,13 @@
     border-radius: 10px;
 }
 
-.ImagePreview{
+.ImagePreview {
     height: 320px;
     max-width: 100%;
+}
+
+@media (max-width: 1000px) {
+    .UploadForm {
+        justify-content: space-between;
+    }
 }

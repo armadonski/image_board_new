@@ -17,3 +17,9 @@
 .Errors {
     max-width: 320px;
 }
+
+@media (max-width: 1000px) {
+    .Errors {
+        font-size: 30px;
+    }
+}

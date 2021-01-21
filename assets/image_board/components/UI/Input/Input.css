@@ -30,3 +30,16 @@ textarea.Input {
     height: 100px;
     font-size: large;
 }
+
+@media (max-width: 1000px) {
+    .Input{
+        width: 100%;
+        font-size:1.7em;
+        line-height: 2em;
+    }
+    textarea.Input {
+        width: 100%;
+        font-size:1.7em;
+        line-height: 2em;
+    }
+}

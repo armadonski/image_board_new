@@ -4,6 +4,6 @@
     cursor: pointer;
 }
 
-.Logo > img {
+.Logo > a > img {
     width: 100px;
 }

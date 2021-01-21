@@ -10,3 +10,9 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+@media (max-width: 1000px) {
+    .Authentication {
+        margin-top: 35%;
+    }
+}

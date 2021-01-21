@@ -9,7 +9,7 @@ Routing.setRoutingData(routes);
 const post = props => {
     return (
         <div className={[classes.Post, props.small ? classes.Small : null].join(' ')}>
-            <div className={[classes.Title, props.titleLarge ? classes.TitleLarge : null].join(' ')}>
+            <div className={[classes.Title].join(' ')}>
                 {props.post.caption}
             </div>
             <a className={classes.PostImage} href={Routing.generate('get_post_page', {uuid: props.post.uuid})}>

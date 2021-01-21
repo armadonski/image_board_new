@@ -33,3 +33,12 @@
 .CommentText {
     font-size: large;
 }
+
+@media (max-width: 1000px) {
+    .CommentWidget{
+        font-size: 50px;
+   }
+    .AvatarMeta {
+        font-size: 20px;
+    }
+}
